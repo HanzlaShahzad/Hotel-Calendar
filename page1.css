@@ -1,0 +1,997 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: #08090b;
+  color: #e8e9eb;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* =========================================
+   CALENDER PAGE NAVIGATION
+========================================= */
+
+.calendar-page-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 0 32px 25px;
+
+  gap: 8px;
+}
+
+.calendar-page-nav a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+
+  padding: 10px 14px;
+
+  background: #101216;
+  border: 1px solid #24272d;
+  border-radius: 7px;
+
+  color: #8d949f;
+
+  text-decoration: none !important;
+
+  transition: all 0.15s ease;
+}
+
+.calendar-page-nav a:hover {
+  background: #191c21;
+  color: #e9edf2;
+}
+
+.calendar-page-nav a.active {
+  background: #20242a;
+  color: #f1f3f5;
+
+  border-color: #30353d;
+}
+
+.calendar-page-nav a span:first-child {
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  color: #65b99e;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.calendar-page-nav a span:last-child {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FULL WIDTH CALENDAR CONTENT
+========================================= */
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: none;
+}
+
+.calendar-main {
+  width: 100%;
+  max-width: none;
+
+  padding: 0 32px 40px;
+}
+
+
+/* =========================================
+   REMOVE OLD WIDTH LIMITS
+========================================= */
+
+.hotel-dashboard>.container,
+.calendar-main>.container {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .calendar-page-nav {
+    padding: 0 15px 20px;
+    gap: 6px;
+  }
+
+  .calendar-page-nav a {
+    min-height: 42px;
+  }
+
+  .calendar-main {
+    padding: 0 15px 30px;
+  }
+
+}
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.body-background {
+  background: #08090b;
+}
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: 720px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 38px 38px 20px;
+  background: #08090b;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.scope-text {
+  margin: 0 0 6px;
+  color: #5e6b7a;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.header-title h1 {
+  margin: 0;
+  color: #f1f2f3;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-description {
+  margin: 7px 0 0;
+  color: #687483;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.dashboard-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+
+/* =========================================================
+   HOTEL DAY CARD
+========================================================= */
+
+.hotel-day-card {
+  flex: 0 0 310px;
+  padding: 16px;
+  border: 1px solid #22272e;
+  border-radius: 12px;
+  background: #15171b;
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   DATE HEADER
+========================================================= */
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.date-information h2 {
+  margin: 0;
+  color: #f3f3f3;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.month-text {
+  margin: 6px 0 0;
+  color: #9299a4;
+  font-size: 8px;
+}
+
+.hotel-name {
+  margin: 1px 0 0;
+  color: #626c78;
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   VIEW CONTROLS
+========================================================= */
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.view-buttons {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #2c323a;
+  border-radius: 5px;
+}
+
+.view-btn {
+  min-width: 38px;
+  height: 25px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid #2c323a;
+  background: transparent;
+  color: #77818e;
+  font-size: 9px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.view-btn:last-child {
+  border-right: 0;
+}
+
+.view-btn:hover {
+  color: #d9dce0;
+  background: #1d2025;
+}
+
+.view-btn.active {
+  background: #d39a43;
+  color: #161719;
+  font-weight: 700;
+}
+
+.today-btn {
+  height: 25px;
+  padding: 0 9px;
+  border: 1px solid #9a6d2b;
+  border-radius: 6px;
+  background: #17181a;
+  color: #d59c42;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.today-btn:hover {
+  background: #9a6d2b;
+  color: #111;
+}
+
+
+/* =========================================================
+   HOTEL STATS
+========================================================= */
+
+.hotel-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  min-height: 56px;
+  padding: 9px 10px;
+  border: 1px solid #292e35;
+  border-radius: 8px;
+  background: #111317;
+}
+
+.stat-item {
+  position: relative;
+  min-width: 0;
+  padding-right: 8px;
+}
+
+.stat-item strong {
+  display: block;
+  color: #d8dce1;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.stat-item:first-child strong {
+  color: #c8d8df;
+}
+
+.stat-item span {
+  display: block;
+  margin-top: 4px;
+  color: #626c77;
+  font-size: 7px;
+  line-height: 1.2;
+}
+
+.danger-stat strong {
+  color: #c45f5f;
+}
+
+
+/* =========================================================
+   BUSY DESCRIPTION
+========================================================= */
+
+.busy-description {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  min-width: 0;
+
+  margin-top: 9px;
+  padding: 8px 10px;
+
+  border: 1px solid #242a31;
+  border-radius: 7px;
+  background: #171a1f;
+}
+
+.busy-description p {
+  margin: 0;
+  color: #aeb8c5;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+.busy-description strong {
+  color: #c0c5cb;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0 12px;
+}
+
+.filter-btn {
+  height: 22px;
+  padding: 0 9px;
+  border: 1px solid #2b3037;
+  border-radius: 5px;
+  background: #15181d;
+  color: #78828e;
+  font-size: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-btn span {
+  margin-left: 2px;
+  color: #66707b;
+}
+
+.filter-btn:hover {
+  background: #20242a;
+  color: #d3d7db;
+}
+
+.filter-btn.active {
+  border-color: #aa722a;
+  background: #201c16;
+  color: #d99c43;
+}
+
+.filter-btn.active span {
+  color: #d99c43;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+  position: relative;
+  margin-top: 4px;
+  padding-bottom: 8px;
+}
+
+/* Normal grey timeline line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 45px;
+  width: 1px;
+  background: #292e35;
+}
+
+
+/* =========================================================
+   TIMELINE ROW
+========================================================= */
+
+.timeline-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 46px;
+  margin-bottom: 2px;
+}
+
+
+/* =========================================================
+   DYNAMIC NOW LINE
+========================================================= */
+
+/*
+  Only the timeline row containing .now-label
+  gets the yellow vertical line.
+
+  Therefore when NOW moves to another event,
+  the yellow line moves automatically with it.
+*/
+
+.timeline-row:has(.now-label)::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 45px;
+
+  width: 1px;
+
+  background: #d29a42;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.time {
+  flex: 0 0 55px;
+  padding-top: 10px;
+  padding-right: 18px;
+
+  color: #71808e;
+  font-size: 8px;
+
+  text-align: right;
+
+  z-index: 2;
+}
+
+.time-now {
+  color: #d29a42;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.event-card {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  flex: 1;
+
+  min-height: 41px;
+
+  margin-left: 0;
+  padding: 8px 9px;
+
+  border: 1px solid #2a3037;
+  border-radius: 7px;
+
+  background: #181b20;
+  color: #e1e3e6;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.event-card:hover {
+  border-color: #58616c;
+  background: #1d2127;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EVENT TYPES
+========================================================= */
+
+.event-blue {
+  border-color: #365c7e;
+  background: #17202a;
+}
+
+.event-blue:hover {
+  border-color: #4b7fa9;
+}
+
+.event-orange {
+  border-color: #a96f28;
+  background: #211b13;
+  min-height: 77px;
+}
+
+.event-red {
+  border-color: #793737;
+  background: #241719;
+}
+
+.event-dark {
+  background: #181b20;
+}
+
+
+/* =========================================================
+   EVENT CONTENT
+========================================================= */
+
+.event-main {
+  min-width: 0;
+}
+
+.event-title {
+  display: block;
+
+  color: #e4e6e8;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.event-meta {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #687480;
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.event-blue .event-meta {
+  color: #718aa0;
+}
+
+.event-orange .event-meta {
+  color: #b48549;
+}
+
+.event-red .event-meta {
+  color: #a05e5e;
+}
+
+.event-source {
+  flex-shrink: 0;
+
+  margin-left: 8px;
+
+  color: #647b91;
+  font-size: 7px;
+}
+
+.event-orange .event-source {
+  color: #bd8a42;
+}
+
+
+/* =========================================================
+   NOW EVENT
+========================================================= */
+
+.now-label {
+  position: absolute;
+
+  top: 7px;
+  left: 9px;
+
+  color: #d29a42;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+.event-orange .event-main {
+  margin-top: 13px;
+}
+
+.event-orange .event-title {
+  max-width: 180px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.event-actions {
+  position: absolute;
+
+  right: 9px;
+  bottom: 9px;
+
+  display: flex;
+  gap: 9px;
+
+  color: #ba8a4a;
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.legend {
+  display: flex;
+  gap: 12px;
+  padding-top: 9px;
+  border-top: 1px solid #282d34;
+}
+
+.legend-item {
+  position: relative;
+  color: #64707c;
+  font-size: 7px;
+}
+
+.legend-item::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 4px;
+  height: 4px;
+
+  margin-right: 4px;
+
+  border-radius: 50%;
+
+  vertical-align: middle;
+}
+
+.legend-item.done {
+  color: #60936e;
+}
+
+.legend-item.done::before {
+  background: #60936e;
+}
+
+.legend-item.now {
+  color: #c8903e;
+}
+
+.legend-item.now::before {
+  background: #c8903e;
+}
+
+.legend-item.attention {
+  color: #b36a6a;
+}
+
+.legend-item.attention::before {
+  background: #b36a6a;
+}
+
+.legend-item.vendor {
+  color: #6785a0;
+}
+
+.legend-item.vendor::before {
+  background: #6785a0;
+}
+
+.legend-item.scheduled {
+  color: #747d87;
+}
+
+.legend-item.scheduled::before {
+  background: #747d87;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.notes-section {
+  flex: 1;
+  padding-top: 5px;
+}
+
+.notes-label {
+  margin: 0 0 17px;
+  color: #586777;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.note {
+  margin-bottom: 17px;
+}
+
+.note h3 {
+  display: inline;
+
+  margin: 0;
+
+  color: #e2e5e8;
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+.note p {
+  display: inline;
+
+  margin: 0;
+
+  color: #77818d;
+  font-size: 9px;
+
+  line-height: 1.6;
+}
+
+.note strong {
+  color: #d5d8dc;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.dashboard-footer {
+  margin-top: 18px;
+  padding-top: 12px;
+
+  border-top: 1px solid #252a30;
+
+  color: #5f6975;
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.with-sidebar {
+  margin-left: 205px;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hotel-dashboard {
+    max-width: 100%;
+    padding: 28px 25px 20px;
+  }
+
+  .dashboard-content {
+    gap: 20px;
+  }
+
+  .hotel-day-card {
+    flex-basis: 300px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hotel-dashboard {
+    padding: 25px 16px 20px;
+  }
+
+  .dashboard-content {
+    display: block;
+  }
+
+  .hotel-day-card {
+    width: 100%;
+  }
+
+  .notes-section {
+    margin-top: 30px;
+  }
+
+  .dashboard-footer {
+    margin-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   SIDEBAR TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .with-sidebar {
+    margin-left: 175px;
+  }
+}
+
+
+/* =========================================================
+   SIDEBAR MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .with-sidebar {
+    margin-left: 0;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .hotel-day-card {
+    padding: 12px;
+  }
+
+  .day-header {
+    display: block;
+  }
+
+  .view-controls {
+    margin-top: 12px;
+    justify-content: space-between;
+  }
+
+  .hotel-stats {
+    padding: 8px 6px;
+  }
+
+  .stat-item strong {
+    font-size: 13px;
+  }
+
+  .stat-item span {
+    font-size: 6px;
+  }
+
+  .filter-btn {
+    padding: 0 7px;
+  }
+
+  .timeline::before {
+    left: 40px;
+  }
+
+  /* Keep the dynamic NOW line aligned with the
+     mobile timeline line */
+  .timeline-row:has(.now-label)::before {
+    left: 40px;
+  }
+
+  .time {
+    flex-basis: 50px;
+    padding-right: 7px;
+    font-size: 7px;
+  }
+
+  .event-title {
+    font-size: 8px;
+  }
+
+  .event-meta {
+    font-size: 6px;
+  }
+
+  .legend {
+    gap: 7px;
+  }
+}
+
+body.embed-page #sidebar {
+  display: none !important;
+}
+
+body.embed-page .with-sidebar {
+  width: 100% !important;
+  margin-left: 0 !important;
+}

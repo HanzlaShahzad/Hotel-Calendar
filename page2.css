@@ -1,0 +1,1080 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #08090b;
+  color: #e8e9eb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+========================================================= */
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 38px 42px 20px;
+  background: #08090b;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+  margin-bottom: 22px;
+}
+
+.scope-text {
+  margin: 0 0 5px;
+  color: #5e6b7a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.header-title h1 {
+  margin: 0;
+  color: #f1f2f3;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-description {
+  margin: 6px 0 0;
+  color: #687483;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   MONTH CONTENT
+========================================================= */
+
+.month-content {
+  display: grid;
+  grid-template-columns: 500px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 38px;
+  width: 100%;
+  max-width: 1380px;
+}
+
+
+/* =========================================================
+   CALENDAR CARD
+========================================================= */
+
+.month-calendar-card {
+  width: 500px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 16px 17px 13px;
+  border: 1px solid #22272e;
+  border-radius: 12px;
+  background: #15171b;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MONTH HEADER
+========================================================= */
+
+.month-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.month-date-information {
+  min-width: 0;
+}
+
+.month-date-information h2 {
+  margin: 0;
+  color: #eeeeef;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.month-date-information p {
+  margin: 3px 0 0;
+  color: #69737f;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   VIEW CONTROLS
+========================================================= */
+
+.month-view-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 0 0 auto;
+}
+
+.month-view-buttons {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #2c323a;
+  border-radius: 5px;
+}
+
+.month-view-btn {
+  min-width: 42px;
+  height: 26px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid #2c323a;
+  background: transparent;
+  color: #77818e;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.month-view-btn:last-child {
+  border-right: 0;
+}
+
+.month-view-btn:hover {
+  color: #d9dce0;
+  background: #1d2025;
+}
+
+.month-view-btn.active {
+  background: #d39a43;
+  color: #161719;
+  font-weight: 700;
+}
+
+.month-today-btn {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #9a6d2b;
+  border-radius: 7px;
+  background: #17181a;
+  color: #d59c42;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.month-today-btn:hover {
+  background: #9a6d2b;
+  color: #111;
+}
+
+/* =========================================
+   CALENDER PAGE NAVIGATION
+========================================= */
+
+.calendar-page-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 0 32px 25px;
+
+  gap: 8px;
+}
+
+.calendar-page-nav a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+
+  padding: 10px 14px;
+
+  background: #101216;
+  border: 1px solid #24272d;
+  border-radius: 7px;
+
+  color: #8d949f;
+
+  text-decoration: none !important;
+
+  transition: all 0.15s ease;
+}
+
+.calendar-page-nav a:hover {
+  background: #191c21;
+  color: #e9edf2;
+}
+
+.calendar-page-nav a.active {
+  background: #20242a;
+  color: #f1f3f5;
+
+  border-color: #30353d;
+}
+
+.calendar-page-nav a span:first-child {
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  color: #65b99e;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.calendar-page-nav a span:last-child {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FULL WIDTH CALENDAR CONTENT
+========================================= */
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: none;
+}
+
+.calendar-main {
+  width: 100%;
+  max-width: none;
+
+  padding: 0 32px 40px;
+}
+
+
+/* =========================================
+   REMOVE OLD WIDTH LIMITS
+========================================= */
+
+.hotel-dashboard>.container,
+.calendar-main>.container {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .calendar-page-nav {
+    padding: 0 15px 20px;
+    gap: 6px;
+  }
+
+  .calendar-page-nav a {
+    min-height: 42px;
+  }
+
+  .calendar-main {
+    padding: 0 15px 30px;
+  }
+
+}
+
+/* =========================================================
+   CALENDAR STRUCTURE
+========================================================= */
+
+.month-week-days,
+.month-calendar-grid,
+.month-calendar-legend {
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns:
+    minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+
+/* =========================================================
+   WEEK DAYS
+========================================================= */
+
+.month-week-days {
+  display: grid;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.month-week-days div {
+  min-width: 0;
+  color: #68727d;
+  font-size: 9px;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CALENDAR GRID
+========================================================= */
+
+.month-calendar-grid {
+  display: grid;
+
+  /* LESS HORIZONTAL GAP */
+  column-gap: 0px;
+
+  /* KEEP VERTICAL GAP */
+  row-gap: 4px;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   CALENDAR CELL
+========================================================= */
+
+.month-calendar-cell {
+  position: relative;
+
+  /* REQUESTED WIDTH */
+  width: 90%;
+
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* FIRST ROW: 96px + 5px */
+  height: 101px;
+  min-height: 101px;
+
+  overflow: hidden;
+  padding: 6px 5px;
+  border: 1px solid #2a2f35;
+  border-radius: 7px;
+  background: #181b20;
+  color: #dfe2e5;
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.month-calendar-cell:hover {
+  border-color: #59616b;
+  background: #20242a;
+  transform: translateY(-1px);
+}
+
+/* Make the first 3 boxes of every row slightly narrower */
+.month-calendar-grid .month-calendar-cell:nth-child(7n + 1),
+.month-calendar-grid .month-calendar-cell:nth-child(7n + 2),
+.month-calendar-grid .month-calendar-cell:nth-child(7n + 3) {
+  width: 85%;
+}
+
+/* =========================================================
+   SECOND ROW
+   FIRST ROW  = 101px
+   SECOND ROW = 81px
+========================================================= */
+
+.month-calendar-grid .month-calendar-cell:nth-child(n + 8):nth-child(-n + 14) {
+  height: 81px;
+  min-height: 81px;
+}
+
+
+/* =========================================================
+   PREVIOUS MONTH CELL
+========================================================= */
+
+.month-previous-cell {
+  background: #121417;
+  border-color: #1d2126;
+  color: #404852;
+  cursor: default;
+}
+
+.month-previous-cell:hover {
+  background: #121417;
+  border-color: #1d2126;
+  transform: none;
+}
+
+.month-previous-number {
+  color: #3f4650;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CELL HEADER
+========================================================= */
+
+.month-cell-header {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.month-cell-header span {
+  min-width: 0;
+}
+
+.month-cell-header span:first-child {
+  color: gray;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.month-cell-header span:last-child {
+  color: #74808b;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   OCCUPANCY
+========================================================= */
+
+.month-occupancy-48 {
+  background: #151b1b;
+}
+
+.month-occupancy-52 {
+  background: #14201d;
+}
+
+.month-occupancy-64 {
+  background: #171b22;
+}
+
+.month-occupancy-69 {
+  background: #1b1d20;
+}
+
+.month-occupancy-71 {
+  background: #1b1e22;
+}
+
+.month-occupancy-78 {
+  background: #1c1e20;
+}
+
+.month-occupancy-88 {
+  background: #211e1e;
+}
+
+.month-occupancy-91 {
+  background: #211e1d;
+}
+
+.month-occupancy-96 {
+  background: #241b1c;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.month-today-cell {
+  border: 2px solid #c58a3a;
+  padding: 5px 4px;
+}
+
+.month-today-cell:hover {
+  border-color: #dda34c;
+}
+
+
+/* =========================================================
+   ATTENTION
+========================================================= */
+
+.month-attention-cell {
+  border-color: #9b4545;
+}
+
+.month-attention-cell:hover {
+  border-color: #bd5555;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.month-cell-events {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.month-cell-chip {
+  display: block;
+  width: auto;
+  max-width: 80%;
+  overflow: hidden;
+  margin: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 3px;
+  padding: 3px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   CHIPS
+========================================================= */
+
+.green-chip {
+  border: 1px solid #315642;
+  background: #182820;
+  color: #659275;
+  text-align: start;
+}
+
+.amber-chip {
+  border: 1px solid #5e4929;
+  background: #292116;
+  color: #bd8b45;
+  text-align: start;
+}
+
+.blue-chip {
+  border: 1px solid #28465f;
+  background: #172431;
+  color: #6c8aa3;
+}
+
+.red-chip {
+  border: 1px solid #613334;
+  background: #2b1a1b;
+  color: #bd6464;
+}
+
+.purple-chip {
+  border: 1px solid #41334d;
+  background: #281f2d;
+  color: #a27eb4;
+}
+
+
+/* =========================================================
+   MORE COUNT
+========================================================= */
+
+.month-more-count {
+  display: block;
+  margin-top: 2px;
+  color: #727b85;
+  font-size: 7.5px;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.month-calendar-legend {
+  display: grid;
+  margin-top: 9px;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+
+  grid-template-columns:
+    minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+  column-gap: 1px;
+}
+
+.month-legend {
+  min-width: 0;
+  font-size: 8px;
+  white-space: nowrap;
+  overflow: visible;
+  text-align: left;
+}
+
+.month-legend.rooms {
+  grid-column: 1;
+  color: #628f99;
+}
+
+.month-legend.maintenance {
+  grid-column: 2;
+  color: #7c878f;
+}
+
+.month-legend.vendors {
+  grid-column: 3;
+  color: #6e91ad;
+}
+
+.month-legend.groups {
+  grid-column: 4;
+  color: #a17bae;
+}
+
+.month-legend.attention {
+  grid-column: 5;
+  color: #bd6767;
+}
+
+.month-legend.occupancy {
+  grid-column: 6 / span 2;
+  color: #515b66;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.month-notes-section {
+  width: 100%;
+  max-width: 440px;
+  padding-top: 8px;
+  min-width: 0;
+}
+
+.month-notes-label {
+  margin: 0 0 25px;
+  color: #586777;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.month-note {
+  margin-bottom: 27px;
+}
+
+.month-note:last-child {
+  margin-bottom: 0;
+}
+
+.month-note p {
+  margin: 0;
+  color: #77818d;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.month-note strong {
+  color: #e0e2e5;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.month-footer {
+  width: 500px;
+  max-width: 100%;
+  margin-top: 48px;
+  padding-top: 11px;
+  border-top: 1px solid #252a30;
+  color: #5f6975;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.with-sidebar {
+  margin-left: 205px;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .hotel-dashboard {
+    max-width: none;
+    padding: 30px 30px 25px;
+  }
+
+  .month-content {
+    grid-template-columns:
+      minmax(0, 500px) minmax(0, 1fr);
+
+    column-gap: 28px;
+  }
+
+  .month-calendar-card {
+    width: 500px;
+    max-width: 100%;
+  }
+
+  .month-footer {
+    width: 500px;
+  }
+}
+
+
+/* =========================================================
+   900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .with-sidebar {
+    margin-left: 175px;
+  }
+
+  .hotel-dashboard {
+    padding: 28px 22px 25px;
+  }
+
+  .month-content {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .month-calendar-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .month-notes-section {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .month-footer {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .with-sidebar {
+    margin-left: 0;
+  }
+
+  .hotel-dashboard {
+    width: 100%;
+    max-width: none;
+    padding: 24px 16px 22px;
+  }
+
+  .month-content {
+    display: block;
+    width: 100%;
+  }
+
+  .month-calendar-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .month-week-days,
+  .month-calendar-grid,
+  .month-calendar-legend {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns:
+      minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 0.72fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+    column-gap: 1px;
+  }
+
+  .month-notes-section {
+    width: 100%;
+    max-width: none;
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .month-footer {
+    width: 100%;
+    margin-top: 32px;
+  }
+}
+
+
+/* =========================================================
+   600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hotel-dashboard {
+    padding: 20px 12px;
+  }
+
+  .month-top {
+    display: block;
+  }
+
+  .month-view-controls {
+    margin-top: 12px;
+    justify-content: space-between;
+  }
+
+  .month-calendar-card {
+    padding: 12px 10px;
+  }
+
+  .month-calendar-cell {
+    height: 87px;
+    min-height: 87px;
+  }
+
+  /*
+    Second row:
+    87px - 10px = 77px
+  */
+
+  .month-calendar-grid .month-calendar-cell:nth-child(n + 8):nth-child(-n + 14) {
+    height: 77px;
+    min-height: 77px;
+  }
+
+  .month-cell-chip {
+    padding: 2px 3px;
+    font-size: 5.5px;
+  }
+
+  .month-more-count {
+    font-size: 5.5px;
+  }
+
+  .month-calendar-legend {
+    column-gap: 1px;
+  }
+
+  .month-legend {
+    font-size: 7px;
+  }
+
+  .month-note {
+    margin-bottom: 17px;
+  }
+}
+
+
+/* =========================================================
+   430px
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .hotel-dashboard {
+    padding: 18px 9px 20px;
+  }
+
+  .month-calendar-card {
+    padding: 10px 7px;
+  }
+
+  .month-view-controls {
+    gap: 5px;
+  }
+
+  .month-view-buttons {
+    flex: 1;
+  }
+
+  .month-view-btn {
+    min-width: 0;
+    flex: 1;
+    padding: 0 5px;
+    font-size: 8px;
+  }
+
+  .month-today-btn {
+    flex: 0 0 auto;
+    padding: 0 8px;
+  }
+
+  .month-calendar-cell {
+    height: 77px;
+    min-height: 77px;
+    padding: 3px 2px;
+    border-radius: 5px;
+  }
+
+  /*
+    Second row:
+    77px - 10px = 67px
+  */
+
+  .month-calendar-grid .month-calendar-cell:nth-child(n + 8):nth-child(-n + 14) {
+    height: 67px;
+    min-height: 67px;
+  }
+
+  .month-cell-header {
+    margin-bottom: 3px;
+  }
+
+  .month-cell-header span:first-child {
+    font-size: 7.5px;
+  }
+
+  .month-cell-header span:last-child {
+    font-size: 5.5px;
+  }
+
+  .month-cell-chip {
+    padding: 2px;
+    font-size: 5px;
+    line-height: 1.1;
+  }
+
+  .month-more-count {
+    font-size: 5px;
+  }
+
+  .month-calendar-legend {
+    column-gap: 1px;
+  }
+
+  .month-legend {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   350px
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .hotel-dashboard {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .month-calendar-card {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .month-calendar-cell {
+    height: 69px;
+    min-height: 69px;
+    padding: 3px 2px;
+  }
+
+  /*
+    Second row:
+    69px - 10px = 59px
+  */
+
+  .month-calendar-grid .month-calendar-cell:nth-child(n + 8):nth-child(-n + 14) {
+    height: 59px;
+    min-height: 59px;
+  }
+
+  .month-cell-chip {
+    font-size: 4.5px;
+  }
+
+  .month-calendar-legend {
+    column-gap: 1px;
+  }
+
+  .month-legend {
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   OCCUPANCY HEADER COLORS
+========================================================= */
+
+.month-occupancy-52 .month-cell-header span:last-child,
+.month-occupancy-48 .month-cell-header span:last-child {
+  color: #71a18c;
+}
+
+.month-occupancy-88 .month-cell-header span:last-child,
+.month-occupancy-91 .month-cell-header span:last-child,
+.month-occupancy-96 .month-cell-header span:last-child {
+  color: #b98282;
+}
+
+body.embed-page #sidebar {
+  display: none !important;
+}
+
+body.embed-page .with-sidebar {
+  width: 100% !important;
+  margin-left: 0 !important;
+}

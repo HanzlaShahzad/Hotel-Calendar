@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotel Month Dashboard</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="page2.css">
+</head>
+
+<body class="body-background">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar"></aside>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Day Dashboard</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="page1.css" />
+
+  </head>
+
+  <body class="body-background">
+    <aside id="sidebar"></aside>
+    <main class="hotel-dashboard with-sidebar">
+
+      <!-- MAIN -->
+      <main class="hotel-dashboard with-sidebar">
+
+        <!-- HEADER -->
+        <section class="dashboard-header">
+
+          <p class="scope-text">
+            IN SCOPE · M5
+          </p>
+
+          <div class="header-title">
+
+            <h1 id="pageTitle">
+              The month
+            </h1>
+
+            <p class="header-description">
+              Overview and planning. Day and week are the working views;
+              month is where you decide what to look at.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- MONTH CONTENT -->
+        <section class="month-content">
+
+
+          <!-- CALENDAR -->
+          <div class="month-calendar-card">
+
+            <div class="month-top">
+
+              <div class="month-date-information">
+
+                <h2 id="calendarTitle">
+                  September 2026
+                </h2>
+
+                <p>
+                  Comfort Suites, Stonecrest
+                </p>
+
+              </div>
+
+
+              <!-- VIEW BUTTONS -->
+              <div class="month-view-controls">
+
+                <div class="month-view-buttons">
+
+                  <button type="button" class="month-view-btn" data-view="day">
+                    Day
+                  </button>
+
+                  <button type="button" class="month-view-btn" data-view="week">
+                    Week
+                  </button>
+
+                  <button type="button" class="month-view-btn active" data-view="month">
+                    Month
+                  </button>
+
+                </div>
+
+
+                <button type="button" class="month-today-btn" id="todayBtn">
+                  Today
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- WEEK DAYS -->
+            <div class="month-week-days">
+
+              <div>SUN</div>
+              <div>MON</div>
+              <div>TUE</div>
+              <div>WED</div>
+              <div>THU</div>
+              <div>FRI</div>
+              <div>SAT</div>
+
+            </div>
+
+
+            <!-- CALENDAR -->
+            <div class="month-calendar-grid" id="calendarGrid"></div>
+
+
+            <!-- LEGEND -->
+            <div class="month-calendar-legend">
+
+              <span class="month-legend rooms">
+                Rooms
+              </span>
+
+              <span class="month-legend maintenance">
+                Maintenance
+              </span>
+
+              <span class="month-legend vendors">
+                vendors
+              </span>
+
+              <span class="month-legend groups">
+                groups
+              </span>
+
+              <span class="month-legend attention">
+                needs attention
+              </span>
+
+              <span class="month-legend occupancy">
+                shading is occupancy
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- NOTES -->
+          <!-- <aside class="month-notes-section">
+
+            <p class="month-notes-label">
+              NOTES
+            </p>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  Month is for planning, not reading.
+                </strong>
+
+                Nobody reads twenty-three events in a cell.
+                The month view answers one question —
+                which days should I be looking at —
+                and hands off to the day view for the rest.
+              </p>
+
+            </div>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  Occupancy shades every cell.
+                </strong>
+
+                A 96% Friday and a 48% Tuesday should not look identical.
+                The tint is faint by design here; the Pressure view
+                on the next page is the loud version.
+              </p>
+
+            </div>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  Two or three chips, then a count.
+                </strong>
+
+                "+21 more" is honest.
+                Cramming six chips into a cell makes every day
+                look the same.
+              </p>
+
+            </div>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  Chips are coloured by department and always labelled.
+                </strong>
+
+                Colour groups; the words carry the meaning.
+              </p>
+
+            </div>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  A group stay reads as a run.
+                </strong>
+
+                Kellerman prep, in, and out across the 10th to the 13th.
+                On the week view the same block spans the all-day row.
+              </p>
+
+            </div>
+
+
+            <div class="month-note">
+
+              <p>
+                <strong>
+                  Ranged loading still applies.
+                </strong>
+
+                A month view loads a month, never a year.
+                Scope M5.
+              </p>
+
+            </div>
+
+          </aside> -->
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="month-footer">
+
+          Today is outlined in amber.
+          A day that needs attention is outlined red —
+          outline and label, never colour alone.
+
+        </footer>
+
+      </main>
+
+
+      <!-- SIDEBAR JS -->
+      <script src="sidebar.js"></script>
+
+
+      <!-- BOOTSTRAP -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+      <!-- CALENDAR JS -->
+      <script>
+
+        const dummyCalendarData = {
+
+          month: {
+
+            title: "September 2026",
+
+            days: [
+
+              {
+                date: "2026-08-31",
+                day: 31,
+                previous: true
+              },
+
+              {
+                date: "2026-09-01",
+                day: 1,
+                occupancy: 52,
+                events: [
+                  {
+                    type: "green",
+                    text: "All-<br>staff<br>mtg"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-02",
+                day: 2,
+                occupancy: 48,
+                events: [
+                  {
+                    type: "amber",
+                    text: "4 PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-03",
+                day: 3,
+                occupancy: 64,
+                events: [
+                  {
+                    type: "amber",
+                    text: "4 PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-04",
+                day: 4,
+                occupancy: 71,
+                events: [
+                  {
+                    type: "amber",
+                    text: "3 PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-05",
+                day: 5,
+                occupancy: 69,
+                events: [
+                  {
+                    type: "green",
+                    text: "Training"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-06",
+                day: 6,
+                occupancy: 78,
+                today: true,
+                events: [
+                  {
+                    type: "blue",
+                    text: "Otis<br>elevator"
+                  },
+                  {
+                    type: "red",
+                    text: "VIP<br>arrival"
+                  }
+                ],
+                more: "+21 more"
+              },
+
+              {
+                date: "2026-09-07",
+                day: 7,
+                occupancy: 52,
+                events: []
+              },
+
+              {
+                date: "2026-09-08",
+                day: 8,
+                occupancy: 48,
+                events: [
+                  {
+                    type: "amber",
+                    text: "5 PM<br>due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-09",
+                day: 9,
+                occupancy: 64,
+                events: [
+                  {
+                    type: "amber",
+                    text: "4 PM<br>due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-10",
+                day: 10,
+                occupancy: 71,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Kellerman<br>prep"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-11",
+                day: 11,
+                occupancy: 88,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Kellerman<br>in"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-12",
+                day: 12,
+                occupancy: 96,
+                attention: true,
+                events: [
+                  {
+                    type: "red",
+                    text: "Short<br>staffed"
+                  },
+                  {
+                    type: "purple",
+                    text: "Kellerman"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-13",
+                day: 13,
+                occupancy: 91,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Kellerman<br>out"
+                  }
+                ]
+              }
+
+            ]
+
+          },
+
+          week: {
+
+            title: "September 6–12, 2026",
+
+            days: [
+
+              {
+                date: "2026-09-06",
+                day: 6,
+                occupancy: 78,
+                today: true,
+                events: [
+                  {
+                    type: "blue",
+                    text: "Otis<br>elevator"
+                  },
+                  {
+                    type: "red",
+                    text: "VIP<br>arrival"
+                  }
+                ],
+                more: "+21 more"
+              },
+
+              {
+                date: "2026-09-07",
+                day: 7,
+                occupancy: 52,
+                events: [
+                  {
+                    type: "green",
+                    text: "Housekeeping"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-08",
+                day: 8,
+                occupancy: 48,
+                events: [
+                  {
+                    type: "amber",
+                    text: "5 PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-09",
+                day: 9,
+                occupancy: 64,
+                events: [
+                  {
+                    type: "amber",
+                    text: "4 PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-10",
+                day: 10,
+                occupancy: 71,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Kellerman<br>prep"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-11",
+                day: 11,
+                occupancy: 88,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Kellerman<br>in"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-12",
+                day: 12,
+                occupancy: 96,
+                attention: true,
+                events: [
+                  {
+                    type: "red",
+                    text: "Short<br>staffed"
+                  },
+                  {
+                    type: "purple",
+                    text: "Kellerman"
+                  }
+                ]
+              }
+
+            ]
+
+          },
+
+          day: {
+
+            title: "September 6, 2026",
+
+            days: [
+
+              {
+                date: "2026-09-06",
+                day: 6,
+                occupancy: 78,
+                today: true,
+                events: [
+                  {
+                    type: "blue",
+                    text: "Otis<br>elevator"
+                  },
+                  {
+                    type: "red",
+                    text: "VIP<br>arrival"
+                  }
+                ],
+                more: "+21 more"
+              },
+
+              {
+                date: "2026-09-07",
+                day: 7,
+                occupancy: 52,
+                events: [
+                  {
+                    type: "green",
+                    text: "Housekeeping"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-08",
+                day: 8,
+                occupancy: 48,
+                events: [
+                  {
+                    type: "amber",
+                    text: "PM due"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-09",
+                day: 9,
+                occupancy: 64,
+                events: [
+                  {
+                    type: "amber",
+                    text: "Inspection"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-10",
+                day: 10,
+                occupancy: 71,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Group prep"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-11",
+                day: 11,
+                occupancy: 88,
+                events: [
+                  {
+                    type: "purple",
+                    text: "Group arrival"
+                  }
+                ]
+              },
+
+              {
+                date: "2026-09-12",
+                day: 12,
+                occupancy: 96,
+                attention: true,
+                events: [
+                  {
+                    type: "red",
+                    text: "Short staffed"
+                  }
+                ]
+              }
+
+            ]
+
+          }
+
+        };
+
+
+        const calendarGrid =
+          document.getElementById("calendarGrid");
+
+        const calendarTitle =
+          document.getElementById("calendarTitle");
+
+        const pageTitle =
+          document.getElementById("pageTitle");
+
+        const viewButtons =
+          document.querySelectorAll(".month-view-btn");
+
+        const todayButton =
+          document.getElementById("todayBtn");
+
+
+        function renderCalendar(view) {
+
+          const data = dummyCalendarData[view];
+
+          if (!data) return;
+
+
+          calendarTitle.textContent =
+            data.title;
+
+
+          pageTitle.textContent =
+            view === "month"
+              ? "The month"
+              : view === "week"
+                ? "The week"
+                : "The day";
+
+
+          calendarGrid.innerHTML = "";
+
+
+          data.days.forEach(day => {
+
+            const cell =
+              document.createElement("button");
+
+
+            cell.type = "button";
+
+
+            cell.classList.add(
+              "month-calendar-cell"
+            );
+
+
+            if (day.previous) {
+              cell.classList.add(
+                "month-previous-cell"
+              );
+            }
+
+
+            if (day.today) {
+              cell.classList.add(
+                "month-today-cell"
+              );
+            }
+
+
+            if (day.attention) {
+              cell.classList.add(
+                "month-attention-cell"
+              );
+            }
+
+
+            if (day.occupancy) {
+
+              cell.classList.add(
+                "month-occupancy-" +
+                day.occupancy
+              );
+
+            }
+
+
+            if (day.date) {
+
+              cell.dataset.date =
+                day.date;
+
+            }
+
+
+            if (day.previous) {
+
+              cell.innerHTML =
+                '<span class="month-previous-number">' +
+                day.day +
+                '</span>';
+
+            } else {
+
+              let eventsHTML = "";
+
+
+              (day.events || []).forEach(event => {
+
+                eventsHTML +=
+                  '<span class="month-cell-chip ' +
+                  event.type +
+                  '-chip">' +
+                  event.text +
+                  '</span>';
+
+              });
+
+
+              const moreHTML =
+                day.more
+                  ? '<span class="month-more-count">' +
+                  day.more +
+                  '</span>'
+                  : "";
+
+
+              cell.innerHTML =
+                '<div class="month-cell-header">' +
+
+                '<span>' +
+                day.day +
+                '</span>' +
+
+                '<span>' +
+                day.occupancy +
+                '%</span>' +
+
+                '</div>' +
+
+                '<div class="month-cell-events">' +
+                eventsHTML +
+                '</div>' +
+
+                moreHTML;
+
+            }
+
+
+            cell.addEventListener(
+              "click",
+              () => handleDateClick(day)
+            );
+
+
+            calendarGrid.appendChild(cell);
+
+          });
+
+        }
+
+
+        function handleDateClick(day) {
+
+          if (day.previous) return;
+
+
+          let message =
+            "Date: " +
+            day.date +
+            "\n";
+
+
+          message +=
+            "Occupancy: " +
+            day.occupancy +
+            "%\n\n";
+
+
+          if (
+            day.events &&
+            day.events.length
+          ) {
+
+            message +=
+              "Events:\n";
+
+
+            day.events.forEach(
+              (event, index) => {
+
+                message +=
+                  (index + 1) +
+                  ". " +
+                  event.text.replace(
+                    /<br>/g,
+                    " "
+                  ) +
+                  "\n";
+
+              }
+            );
+
+          } else {
+
+            message +=
+              "No events scheduled.";
+
+          }
+
+
+          if (day.more) {
+
+            message +=
+              "\nAdditional events: " +
+              day.more;
+
+          }
+
+
+          alert(message);
+
+        }
+
+
+        viewButtons.forEach(button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              viewButtons.forEach(btn => {
+
+                btn.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              renderCalendar(
+                button.dataset.view
+              );
+
+            }
+          );
+
+        });
+
+
+        todayButton.addEventListener(
+          "click",
+          () => {
+
+            viewButtons.forEach(btn => {
+
+              btn.classList.remove(
+                "active"
+              );
+
+            });
+
+
+            document
+              .querySelector(
+                '[data-view="month"]'
+              )
+              .classList.add("active");
+
+
+            renderCalendar("month");
+
+
+            const todayCell =
+              document.querySelector(
+                '[data-date="2026-09-06"]'
+              );
+
+
+            if (todayCell) {
+
+              todayCell.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+
+
+              setTimeout(() => {
+
+                alert(
+                  "Today — September 6, 2026\n\n" +
+                  "Occupancy: 78%\n" +
+                  "VIP arrival\n" +
+                  "Otis elevator\n" +
+                  "+21 more events"
+                );
+
+              }, 250);
+
+            }
+
+          }
+        );
+
+
+        renderCalendar("month");
+
+      </script>
+      <script>
+        if (window.location.search.indexOf("embed=1") !== -1) {
+          document.body.classList.add("embed-page");
+        }
+      </script>
+  </body>
+
+  </html>

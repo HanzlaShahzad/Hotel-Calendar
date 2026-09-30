@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pressure - Hotel Dashboard</title>
+
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Shared Sidebar -->
+  <link rel="stylesheet" href="sidebar.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="page5.css">
+</head>
+
+<body>
+
+  <!-- Shared Sidebar -->
+  <aside id="sidebar"></aside>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Day Dashboard</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="page1.css" />
+
+  </head>
+
+  <body class="body-background">
+    <aside id="sidebar"></aside>
+
+    <main class="hotel-dashboard with-sidebar">
+
+      <!-- Page -->
+      <main class="pressure-page">
+
+        <!-- HEADER -->
+        <header class="pressure-header">
+
+          <div class="header-kicker">
+            LATER · NOT CONTRACTED
+          </div>
+
+          <h1>Pressure</h1>
+
+          <p>
+            The month read as how hard each day will be,
+            rather than what is on it.
+          </p>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="pressure-layout">
+
+          <!-- LEFT CALENDAR -->
+          <section class="calendar-card">
+
+            <!-- Calendar Header -->
+            <div class="calendar-top">
+
+              <div>
+                <h2>September 2026</h2>
+
+                <div class="calendar-subtitle">
+                  how hard each day is going to be
+                </div>
+              </div>
+
+              <!-- VIEW BUTTONS -->
+              <div class="view-buttons">
+
+                <button type="button" class="view-btn" data-view="grid">
+                  Grid
+                </button>
+
+                <button type="button" class="view-btn active" data-view="pressure">
+                  Pressure
+                </button>
+
+                <button type="button" class="view-btn" data-view="list">
+                  List
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+            <div class="filter-buttons">
+
+              <button type="button" class="filter-btn active" data-filter="everything">
+                everything
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="rooms">
+                rooms to clean
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="staffing">
+                staffing
+              </button>
+
+              <button type="button" class="filter-btn" data-filter="maintenance">
+                maintenance load
+              </button>
+
+            </div>
+
+
+            <!-- CALENDAR -->
+            <div id="calendarContainer">
+
+              <div class="weekdays">
+
+                <div>Su</div>
+                <div>Mo</div>
+                <div>Tu</div>
+                <div>We</div>
+                <div>Th</div>
+                <div>Fr</div>
+                <div>Sa</div>
+
+              </div>
+
+              <div class="calendar-grid" id="calendarGrid"></div>
+
+            </div>
+
+
+            <!-- LEGEND -->
+            <div class="legend">
+
+              <span class="legend-label">easy</span>
+
+              <div class="legend-colors">
+                <span class="legend-box easy-1"></span>
+                <span class="legend-box easy-2"></span>
+                <span class="legend-box easy-3"></span>
+                <span class="legend-box easy-4"></span>
+                <span class="legend-box easy-5"></span>
+                <span class="legend-box easy-6"></span>
+              </div>
+
+              <span class="legend-label">too much</span>
+
+            </div>
+
+
+            <!-- DAY DETAIL -->
+            <div class="day-detail" id="dayDetail">
+
+              <div class="detail-header">
+
+                <div>
+                  <h3 id="detailTitle">
+                    Friday the 12th
+                  </h3>
+
+                  <span class="detail-capacity" id="detailCapacity">
+                    184% of capacity
+                  </span>
+                </div>
+
+              </div>
+
+
+              <!-- METRICS -->
+              <div class="detail-metrics">
+
+                <div class="metric-row">
+
+                  <span>rooms to clean</span>
+
+                  <div class="metric-bar">
+                    <span id="roomsBar" style="width: 72%;"></span>
+                  </div>
+
+                  <strong id="roomsText">
+                    58 of 32
+                  </strong>
+
+                </div>
+
+
+                <div class="metric-row">
+
+                  <span>people on</span>
+
+                  <div class="metric-bar">
+                    <span id="peopleBar" style="width: 86%;"></span>
+                  </div>
+
+                  <strong id="peopleText">
+                    9 of 11
+                  </strong>
+
+                </div>
+
+
+                <div class="metric-row">
+
+                  <span>maintenance</span>
+
+                  <div class="metric-bar">
+                    <span id="maintenanceBar" style="width: 50%;"></span>
+                  </div>
+
+                  <strong id="maintenanceText">
+                    6 PM
+                  </strong>
+
+                </div>
+
+
+                <div class="metric-row">
+
+                  <span>occupancy</span>
+
+                  <div class="metric-bar">
+                    <span id="occupancyBar" style="width: 94%;"></span>
+                  </div>
+
+                  <strong id="occupancyText">
+                    96%
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <!-- DETAIL NOTE -->
+              <div class="detail-note" id="detailNote">
+
+                Kellerman arrives the same day 58 rooms turn,
+                with two housekeepers off. Nothing about this
+                day is going to go well as scheduled.
+
+              </div>
+
+
+              <!-- ACTION BUTTONS -->
+              <div class="detail-actions">
+
+                <button type="button" class="action-btn primary-action" id="moveBtn">
+                  Move the 6 PMs to Tuesday
+                </button>
+
+                <button type="button" class="action-btn" id="coverBtn">
+                  Ask for cover
+                </button>
+
+                <button type="button" class="action-btn" id="openDayBtn">
+                  Open the day
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- LIST VIEW -->
+            <div class="list-view" id="listView"></div>
+
+          </section>
+
+
+          <!-- RIGHT NOTES -->
+          <!-- <aside class="notes-column">
+
+            <div class="notes-kicker">
+              NOTES
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>The month, read as effort.</strong>
+                Not what is scheduled — how hard it will be.
+                The shape of the month is visible before a
+                single word is read.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>Pressure is work against people.</strong>
+                Rooms to clean, maintenance load and occupancy
+                on one side; who is rostered on the other.
+                Change either and the colour changes.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>A word, not a number.</strong>
+                Easy, steady, busy, heavy, too much.
+                A percentage would need decoding; a word does not.
+                It also satisfies the colour rule — every cell
+                carries a label.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>Filter to one driver.</strong>
+                Just staffing, or just rooms to clean.
+                Useful when the composite says a day is bad
+                but not why.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>Tapping a day shows the arithmetic.</strong>
+                58 rooms against capacity for 32, nine people
+                where eleven are needed. Trust comes from
+                showing the sum, not the verdict.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>The first action is specific.</strong>
+                “Move the 6 PMs to Tuesday” — not
+                “review scheduling.” It names the work,
+                the day, and where it goes.
+              </p>
+
+            </div>
+
+
+            <div class="note-item">
+
+              <p>
+                <strong>Not in the current scope.</strong>
+                Pressure is proposed direction. It needs the
+                roster, the turn, and PDEO load in one query.
+                Confirm before building.
+              </p>
+
+            </div>
+
+          </aside> -->
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="pressure-footer">
+
+          This is the view a general manager would open first,
+          and the one no other hotel system offers.
+
+        </footer>
+
+      </main>
+
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+      <!-- Bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <!-- Shared Sidebar -->
+      <script src="sidebar.js"></script>
+
+
+      <!-- PAGE 5 JAVASCRIPT -->
+      <script>
+
+        /*
+        ============================================================
+        DUMMY DATA
+        Later replace this object with your backend API response.
+        ============================================================
+        */
+
+        const pressureData = {
+
+          1: {
+            day: 1,
+            weekday: "Tuesday",
+            level: "easy",
+            rooms: 20,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 8,
+            maintenance: "2 PM",
+            occupancy: 62,
+            summary: "A light day with enough staff and manageable rooms."
+          },
+
+          2: {
+            day: 2,
+            weekday: "Wednesday",
+            level: "easy",
+            rooms: 22,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 8,
+            maintenance: "3 PM",
+            occupancy: 65,
+            summary: "Rooms and staffing are comfortably balanced."
+          },
+
+          3: {
+            day: 3,
+            weekday: "Thursday",
+            level: "steady",
+            rooms: 30,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 9,
+            maintenance: "4 PM",
+            occupancy: 74,
+            summary: "A steady operating day with moderate occupancy."
+          },
+
+          4: {
+            day: 4,
+            weekday: "Friday",
+            level: "steady",
+            rooms: 31,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 10,
+            maintenance: "4 PM",
+            occupancy: 78,
+            summary: "Near capacity, but still manageable."
+          },
+
+          5: {
+            day: 5,
+            weekday: "Saturday",
+            level: "busy",
+            rooms: 38,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 11,
+            maintenance: "5 PM",
+            occupancy: 88,
+            summary: "Higher room turns and occupancy create pressure."
+          },
+
+          6: {
+            day: 6,
+            weekday: "Sunday",
+            level: "busy",
+            rooms: 42,
+            roomCapacity: 32,
+            people: 10,
+            peopleNeeded: 12,
+            maintenance: "5 PM",
+            occupancy: 91,
+            summary: "A busy Sunday with increased room demand."
+          },
+
+          7: {
+            day: 7,
+            weekday: "Monday",
+            level: "steady",
+            rooms: 29,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 9,
+            maintenance: "3 PM",
+            occupancy: 70,
+            summary: "A balanced start to the week."
+          },
+
+          8: {
+            day: 8,
+            weekday: "Tuesday",
+            level: "easy",
+            rooms: 24,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 8,
+            maintenance: "2 PM",
+            occupancy: 64,
+            summary: "Low room pressure and adequate staffing."
+          },
+
+          9: {
+            day: 9,
+            weekday: "Wednesday",
+            level: "steady",
+            rooms: 28,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 9,
+            maintenance: "3 PM",
+            occupancy: 72,
+            summary: "Normal operating pressure."
+          },
+
+          10: {
+            day: 10,
+            weekday: "Thursday",
+            level: "busy",
+            rooms: 39,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 11,
+            maintenance: "5 PM",
+            occupancy: 89,
+            summary: "High room demand and rising occupancy."
+          },
+
+          11: {
+            day: 11,
+            weekday: "Friday",
+            level: "heavy",
+            rooms: 48,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 12,
+            maintenance: "6 PM",
+            occupancy: 94,
+            summary: "Staffing is below the required level."
+          },
+
+          12: {
+            day: 12,
+            weekday: "Friday",
+            level: "too much",
+            rooms: 58,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 11,
+            maintenance: "6 PM",
+            occupancy: 96,
+            summary:
+              "Kellerman arrives the same day 58 rooms turn, with two housekeepers off. Nothing about this day is going to go well as scheduled."
+          },
+
+          13: {
+            day: 13,
+            weekday: "Saturday",
+            level: "heavy",
+            rooms: 49,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 11,
+            maintenance: "6 PM",
+            occupancy: 95,
+            summary: "Heavy turnover and high occupancy."
+          },
+
+          14: {
+            day: 14,
+            weekday: "Sunday",
+            level: "steady",
+            rooms: 30,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 9,
+            maintenance: "3 PM",
+            occupancy: 76,
+            summary: "A steady day with balanced resources."
+          },
+
+          15: {
+            day: 15,
+            weekday: "Monday",
+            level: "easy",
+            rooms: 21,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 8,
+            maintenance: "2 PM",
+            occupancy: 61,
+            summary: "Quiet Monday with plenty of capacity."
+          },
+
+          16: {
+            day: 16,
+            weekday: "Tuesday",
+            level: "easy",
+            rooms: 23,
+            roomCapacity: 32,
+            people: 8,
+            peopleNeeded: 8,
+            maintenance: "2 PM",
+            occupancy: 65,
+            summary: "Comfortable staffing and room workload."
+          },
+
+          17: {
+            day: 17,
+            weekday: "Wednesday",
+            level: "steady",
+            rooms: 30,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 9,
+            maintenance: "4 PM",
+            occupancy: 73,
+            summary: "Normal mid-week pressure."
+          },
+
+          18: {
+            day: 18,
+            weekday: "Thursday",
+            level: "steady",
+            rooms: 31,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 10,
+            maintenance: "4 PM",
+            occupancy: 77,
+            summary: "Close to room capacity."
+          },
+
+          19: {
+            day: 19,
+            weekday: "Friday",
+            level: "busy",
+            rooms: 40,
+            roomCapacity: 32,
+            people: 9,
+            peopleNeeded: 11,
+            maintenance: "5 PM",
+            occupancy: 90,
+            summary: "Busy Friday with increased occupancy."
+          },
+
+          20: {
+            day: 20,
+            weekday: "Saturday",
+            level: "busy",
+            rooms: 43,
+            roomCapacity: 32,
+            people: 10,
+            peopleNeeded: 12,
+            maintenance: "5 PM",
+            occupancy: 92,
+            summary: "High weekend pressure."
+          }
+
+        };
+
+
+        /*
+        ============================================================
+        HELPERS
+        ============================================================
+        */
+
+        function getOrdinal(number) {
+
+          if (number % 100 >= 11 && number % 100 <= 13) {
+            return number + "th";
+          }
+
+          switch (number % 10) {
+
+            case 1:
+              return number + "st";
+
+            case 2:
+              return number + "nd";
+
+            case 3:
+              return number + "rd";
+
+            default:
+              return number + "th";
+          }
+        }
+
+
+        function getPressureClass(level) {
+
+          return level
+            .toLowerCase()
+            .replace(/\s+/g, "-");
+        }
+
+
+        function calculateCapacity(data) {
+
+          const roomPressure =
+            data.rooms / data.roomCapacity;
+
+          const staffingPressure =
+            data.peopleNeeded / data.people;
+
+          const occupancyPressure =
+            data.occupancy / 100;
+
+          const value =
+            Math.max(
+              roomPressure,
+              staffingPressure,
+              occupancyPressure
+            ) * 100;
+
+          return Math.round(value);
+        }
+
+
+        /*
+        ============================================================
+        CALENDAR
+        ============================================================
+        */
+
+        function renderCalendar() {
+
+          const grid =
+            document.getElementById("calendarGrid");
+
+          grid.innerHTML = "";
+
+
+          /*
+          September 2026 starts on Tuesday.
+          Sunday = 0
+          Monday = 1
+          Tuesday = 2
+          */
+
+          const firstDay = 2;
+
+
+          // Empty cells before September 1
+          for (let i = 0; i < firstDay; i++) {
+
+            const empty =
+              document.createElement("div");
+
+            empty.className =
+              "calendar-empty";
+
+            grid.appendChild(empty);
+          }
+
+
+          // Days
+          for (let day = 1; day <= 30; day++) {
+
+            const data =
+              pressureData[day] ||
+              {
+                day: day,
+                weekday: "",
+                level: "easy",
+                rooms: 20,
+                roomCapacity: 32,
+                people: 8,
+                peopleNeeded: 8,
+                maintenance: "2 PM",
+                occupancy: 60,
+                summary: "No pressure data entered yet."
+              };
+
+
+            const cell =
+              document.createElement("button");
+
+            cell.type = "button";
+
+            cell.className =
+              "day-cell " +
+              getPressureClass(data.level);
+
+            cell.setAttribute(
+              "data-day",
+              day
+            );
+
+
+            cell.innerHTML = `
+                    <span class="day-number">
+                        ${day}
+                    </span>
+
+                    <span class="day-level">
+                        ${data.level}
+                    </span>
+                `;
+
+
+            cell.addEventListener(
+              "click",
+              function () {
+
+                selectDay(day);
+
+              }
+            );
+
+
+            grid.appendChild(cell);
+          }
+        }
+
+
+        /*
+        ============================================================
+        SELECT DAY
+        ============================================================
+        */
+
+        function selectDay(day) {
+
+          const data =
+            pressureData[day];
+
+
+          if (!data) {
+            return;
+          }
+
+
+          // Remove previous selection
+          document
+            .querySelectorAll(".day-cell")
+            .forEach(function (cell) {
+
+              cell.classList.remove("selected");
+
+            });
+
+
+          const selected =
+            document.querySelector(
+              '.day-cell[data-day="' +
+              day +
+              '"]'
+            );
+
+
+          if (selected) {
+            selected.classList.add("selected");
+          }
+
+
+          // Title
+          document.getElementById(
+            "detailTitle"
+          ).textContent =
+            data.weekday +
+            " the " +
+            getOrdinal(data.day);
+
+
+          // Capacity
+          const capacity =
+            calculateCapacity(data);
+
+
+          document.getElementById(
+            "detailCapacity"
+          ).textContent =
+            capacity +
+            "% of capacity";
+
+
+          // Room values
+          document.getElementById(
+            "roomsText"
+          ).textContent =
+            data.rooms +
+            " of " +
+            data.roomCapacity;
+
+
+          // People
+          document.getElementById(
+            "peopleText"
+          ).textContent =
+            data.people +
+            " of " +
+            data.peopleNeeded;
+
+
+          // Maintenance
+          document.getElementById(
+            "maintenanceText"
+          ).textContent =
+            data.maintenance;
+
+
+          // Occupancy
+          document.getElementById(
+            "occupancyText"
+          ).textContent =
+            data.occupancy +
+            "%";
+
+
+          /*
+          -------------------------
+          Progress bars
+          -------------------------
+          */
+
+          const roomWidth =
+            Math.min(
+              (data.rooms /
+                data.roomCapacity) *
+              100,
+              100
+            );
+
+
+          const peopleWidth =
+            Math.min(
+              (data.people /
+                data.peopleNeeded) *
+              100,
+              100
+            );
+
+
+          document.getElementById(
+            "roomsBar"
+          ).style.width =
+            roomWidth + "%";
+
+
+          document.getElementById(
+            "peopleBar"
+          ).style.width =
+            peopleWidth + "%";
+
+
+          document.getElementById(
+            "occupancyBar"
+          ).style.width =
+            data.occupancy + "%";
+
+
+          document.getElementById(
+            "maintenanceBar"
+          ).style.width =
+            "50%";
+
+
+          // Summary
+          document.getElementById(
+            "detailNote"
+          ).textContent =
+            data.summary;
+
+
+          /*
+          -------------------------
+          Detail button
+          -------------------------
+          */
+
+          const moveButton =
+            document.getElementById(
+              "moveBtn"
+            );
+
+
+          if (day === 12) {
+
+            moveButton.textContent =
+              "Move the 6 PMs to Tuesday";
+
+          } else {
+
+            moveButton.textContent =
+              "Review this day's schedule";
+
+          }
+
+        }
+
+
+        /*
+        ============================================================
+        VIEW BUTTONS
+        ============================================================
+        */
+
+        document
+          .querySelectorAll(".view-btn")
+          .forEach(function (button) {
+
+            button.addEventListener(
+              "click",
+              function () {
+
+                document
+                  .querySelectorAll(".view-btn")
+                  .forEach(
+                    function (btn) {
+
+                      btn.classList.remove(
+                        "active"
+                      );
+
+                    }
+                  );
+
+
+                button.classList.add(
+                  "active"
+                );
+
+
+                const view =
+                  button.getAttribute(
+                    "data-view"
+                  );
+
+
+                changeView(view);
+
+              }
+            );
+
+          });
+
+
+        function changeView(view) {
+
+          const calendar =
+            document.getElementById(
+              "calendarContainer"
+            );
+
+          const list =
+            document.getElementById(
+              "listView"
+            );
+
+
+          if (view === "list") {
+
+            calendar.style.display =
+              "none";
+
+            document.getElementById(
+              "dayDetail"
+            ).style.display =
+              "none";
+
+            list.style.display =
+              "block";
+
+            renderList();
+
+            return;
+          }
+
+
+          calendar.style.display =
+            "block";
+
+          document.getElementById(
+            "dayDetail"
+          ).style.display =
+            "block";
+
+          list.style.display =
+            "none";
+
+
+          if (view === "grid") {
+
+            document
+              .getElementById(
+                "calendarGrid"
+              )
+              .classList.add(
+                "grid-view"
+              );
+
+          } else {
+
+            document
+              .getElementById(
+                "calendarGrid"
+              )
+              .classList.remove(
+                "grid-view"
+              );
+
+          }
+
+        }
+
+
+        /*
+        ============================================================
+        LIST VIEW
+        ============================================================
+        */
+
+        function renderList() {
+
+          const list =
+            document.getElementById(
+              "listView"
+            );
+
+
+          list.innerHTML = "";
+
+
+          Object
+            .values(pressureData)
+            .forEach(function (data) {
+
+              const item =
+                document.createElement(
+                  "button"
+                );
+
+
+              item.type = "button";
+
+              item.className =
+                "list-day " +
+                getPressureClass(
+                  data.level
+                );
+
+
+              item.innerHTML = `
+
+                        <span class="list-date">
+                            ${data.day}
+                        </span>
+
+                        <span class="list-info">
+
+                            <strong>
+                                ${data.weekday}
+                            </strong>
+
+                            <small>
+                                ${data.rooms} rooms ·
+                                ${data.people} people ·
+                                ${data.occupancy}% occupancy
+                            </small>
+
+                        </span>
+
+                        <span class="list-level">
+                            ${data.level}
+                        </span>
+
+                    `;
+
+
+              item.addEventListener(
+                "click",
+                function () {
+
+                  // Switch back to pressure view
+                  document
+                    .querySelector(
+                      '[data-view="pressure"]'
+                    )
+                    .click();
+
+                  selectDay(
+                    data.day
+                  );
+
+                }
+              );
+
+
+              list.appendChild(item);
+
+            });
+
+        }
+
+
+        /*
+        ============================================================
+        FILTER BUTTONS
+        ============================================================
+        */
+
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach(function (button) {
+
+            button.addEventListener(
+              "click",
+              function () {
+
+                document
+                  .querySelectorAll(
+                    ".filter-btn"
+                  )
+                  .forEach(
+                    function (btn) {
+
+                      btn.classList.remove(
+                        "active"
+                      );
+
+                    }
+                  );
+
+
+                button.classList.add(
+                  "active"
+                );
+
+
+                const filter =
+                  button.getAttribute(
+                    "data-filter"
+                  );
+
+
+                applyFilter(filter);
+
+              }
+            );
+
+          });
+
+
+        function applyFilter(filter) {
+
+          document
+            .querySelectorAll(".day-cell")
+            .forEach(function (cell) {
+
+              const day =
+                Number(
+                  cell.getAttribute(
+                    "data-day"
+                  )
+                );
+
+
+              const data =
+                pressureData[day];
+
+
+              if (!data) {
+                return;
+              }
+
+
+              cell.classList.remove(
+                "filtered-out"
+              );
+
+
+              if (filter === "rooms") {
+
+                if (
+                  data.rooms <=
+                  data.roomCapacity
+                ) {
+
+                  cell.classList.add(
+                    "filtered-out"
+                  );
+
+                }
+
+              }
+
+
+              if (filter === "staffing") {
+
+                if (
+                  data.people >=
+                  data.peopleNeeded
+                ) {
+
+                  cell.classList.add(
+                    "filtered-out"
+                  );
+
+                }
+
+              }
+
+
+              if (filter === "maintenance") {
+
+                if (
+                  data.maintenance ===
+                  "2 PM"
+                ) {
+
+                  cell.classList.add(
+                    "filtered-out"
+                  );
+
+                }
+
+              }
+
+            });
+
+        }
+
+
+        /*
+        ============================================================
+        ACTION BUTTONS
+        ============================================================
+        */
+
+        document
+          .getElementById("moveBtn")
+          .addEventListener(
+            "click",
+            function () {
+
+              alert(
+                "Dummy action: the 6 PM appointments would be moved to Tuesday."
+              );
+
+            }
+          );
+
+
+        document
+          .getElementById("coverBtn")
+          .addEventListener(
+            "click",
+            function () {
+
+              alert(
+                "Dummy action: cover request created for this day."
+              );
+
+            }
+          );
+
+
+        document
+          .getElementById("openDayBtn")
+          .addEventListener(
+            "click",
+            function () {
+
+              alert(
+                "Dummy action: opening the detailed day schedule."
+              );
+
+            }
+          );
+
+
+        /*
+        ============================================================
+        INITIAL LOAD
+        ============================================================
+        */
+
+        renderCalendar();
+
+        renderList();
+
+        // Screenshot starts with Friday the 12th selected
+        selectDay(12);
+
+      </script>
+      <script>
+        if (window.location.search.indexOf("embed=1") !== -1) {
+          document.body.classList.add("embed-page");
+        }
+      </script>
+  </body>
+
+  </html>

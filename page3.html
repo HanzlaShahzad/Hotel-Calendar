@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Layers, groups and sharing</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Shared Sidebar -->
+  <link rel="stylesheet" href="sidebar.css">
+
+  <!-- Page 3 -->
+  <link rel="stylesheet" href="page3.css">
+</head>
+
+<body>
+
+  <!-- =========================
+         SIDEBAR
+    ========================== -->
+  <aside id="sidebar"></aside>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Day Dashboard</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="page1.css" />
+
+  </head>
+
+  <body class="body-background">
+    <aside id="sidebar"></aside>
+
+    <main class="hotel-dashboard with-sidebar">
+
+      <!-- =========================
+         PAGE CONTENT
+    ========================== -->
+      <main class="page-content with-sidebar">
+
+        <div class="dashboard-wrap">
+
+          <!-- =========================
+                 HEADER
+            ========================== -->
+          <header class="page-header">
+
+            <div class="scope-label">
+              IN SCOPE · EXTENDED
+            </div>
+
+            <h1>
+              Layers, groups and sharing
+            </h1>
+
+            <p class="header-description">
+              Who sees what, and how a team assembles a
+              calendar around a piece of work.
+            </p>
+
+          </header>
+
+
+          <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
+          <div class="row main-row">
+
+            <!-- =========================
+                     LEFT COLUMN
+                ========================== -->
+            <div class="col-sm-6 left-column">
+
+              <section class="calendar-card">
+
+                <!-- CARD HEADER -->
+                <div class="card-heading">
+
+                  <h2>
+                    Calendars
+                  </h2>
+
+                  <button class="new-calendar-btn" id="newCalendarBtn" type="button">
+                    new calendar
+                  </button>
+
+                </div>
+
+
+                <!-- =========================
+                             YOURS
+                        ========================== -->
+                <div class="calendar-section">
+
+                  <div class="section-label">
+                    YOURS
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-orange"></span>
+
+                      <div>
+                        <div class="item-name">
+                          My work
+                        </div>
+
+                        <div class="item-subtitle">
+                          what's assigned to you
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="My work" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-purple"></span>
+
+                      <div>
+                        <div class="item-name">
+                          Personal
+                        </div>
+
+                        <div class="item-subtitle">
+                          only you can see these
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="Personal" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <!-- =========================
+                             DEPARTMENTS
+                        ========================== -->
+                <div class="calendar-section">
+
+                  <div class="section-heading">
+
+                    <span class="section-label">
+                      DEPARTMENTS
+                    </span>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-blue"></span>
+
+                      <div class="item-name">
+                        Rooms
+                      </div>
+
+                    </div>
+
+
+                    <div class="item-right">
+
+                      <span class="tiny-text">
+                        yours
+                      </span>
+
+                      <button class="switch active" data-name="Rooms" type="button">
+                        <span></span>
+                      </button>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-orange"></span>
+
+                      <div class="item-name">
+                        Maintenance
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="Maintenance" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item disabled-row">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-gray"></span>
+
+                      <div class="item-name">
+                        Food &amp; Beverage
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch" data-name="Food & Beverage" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <!-- =========================
+                             GROUPS
+                        ========================== -->
+                <div class="calendar-section">
+
+                  <div class="section-heading">
+
+                    <span class="section-label">
+                      GROUPS
+                    </span>
+
+                    <button class="section-action" id="createGroupBtn" type="button">
+                      create one
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-green"></span>
+
+                      <div>
+
+                        <div class="item-name">
+                          Lobby renovation
+                        </div>
+
+                        <div class="item-subtitle">
+                          6 people · ends Nov 30
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="Lobby renovation" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-pink"></span>
+
+                      <div>
+
+                        <div class="item-name">
+                          Kellerman group
+                        </div>
+
+                        <div class="item-subtitle">
+                          Sep 12–15 · 40 rooms, 2 banquets
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="Kellerman group" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item disabled-row">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-gray"></span>
+
+                      <div>
+
+                        <div class="item-name">
+                          Brand inspection prep
+                        </div>
+
+                        <div class="item-subtitle">
+                          ended Aug 22
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch" data-name="Brand inspection prep" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <!-- =========================
+                             SHARED WITH YOU
+                        ========================== -->
+                <div class="calendar-section shared-section">
+
+                  <div class="section-label">
+                    SHARED WITH YOU
+                  </div>
+
+
+                  <div class="shared-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-orange"></span>
+
+                      <div>
+
+                        <div class="item-name">
+                          Vendor visits
+                        </div>
+
+                        <div class="item-subtitle">
+                          Teresa shared this with you yesterday
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <button class="add-btn" id="addVendorBtn" type="button">
+                      add it
+                    </button>
+
+                  </div>
+
+
+                  <div class="calendar-item">
+
+                    <div class="item-left">
+
+                      <span class="calendar-dot dot-blue"></span>
+
+                      <div>
+
+                        <div class="item-name">
+                          Property-wide
+                        </div>
+
+                        <div class="item-subtitle">
+                          holidays, all-staff, fire drills
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <button class="switch active" data-name="Property-wide" type="button">
+                      <span></span>
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+            </div>
+
+
+            <!-- =========================
+                     RIGHT COLUMN
+                ========================== -->
+            <!-- <div class="col-sm-6 right-column">
+
+              <section class="notes-section">
+
+                <div class="notes-label">
+                  NOTES
+                </div>
+
+
+                <p>
+                  <strong>
+                    Four kinds of calendar, one picker.
+                  </strong>
+
+                  Your own work and a private personal calendar;
+                  departments, groups; and calendars someone
+                  shared with you.
+                </p>
+
+
+                <p>
+                  <strong>
+                    Groups are the flexible layer.
+                  </strong>
+
+                  A renovation, a group stay, an inspection push.
+                  They cut across departments, carry their own
+                  members, and can be created by anyone who needs one.
+                </p>
+
+
+                <p>
+                  <strong>
+                    Groups end.
+                  </strong>
+
+                  A group carries an end date and drops off
+                  everyone's list when it passes, unless extended.
+                  Without that, the picker fills with dead projects
+                  inside a year.
+                </p>
+
+
+                <p>
+                  <strong>
+                    Ended is greyed, not deleted.
+                  </strong>
+
+                  History stays reachable. A brand inspection from
+                  August is still evidence.
+                </p>
+
+
+                <p>
+                  <strong>
+                    Sharing is a handoff, not a hunt.
+                  </strong>
+
+                  A shared calendar arrives in the list waiting to
+                  be added. Nobody should have to know a calendar
+                  exists in order to find it.
+                </p>
+
+
+                <p>
+                  <strong>
+                    Colour is chosen, and never alone.
+                  </strong>
+
+                  Every layer carries a name; colour distinguishes
+                  it, it does not encode.
+                </p>
+
+
+                <p class="out-of-scope">
+
+                  <strong>
+                    Not in the current scope.
+                  </strong>
+
+                  The existing scope covers department filtering
+                  only. Calendar groups, personal calendars and
+                  sharing are proposed direction. Confirm before
+                  building.
+
+                </p>
+
+              </section>
+
+            </div> -->
+
+          </div>
+
+
+          <!-- =========================
+                 FOOTER
+            ========================== -->
+          <footer class="page-footer">
+
+            Visibility and permission stay server-side.
+            A layer being switched off is a display choice,
+            never an access control.
+
+          </footer>
+
+        </div>
+
+      </main>
+
+
+      <!-- =========================
+         SIDEBAR JS
+    ========================== -->
+      <script src="sidebar.js"></script>
+
+
+      <!-- =========================
+         JQUERY
+    ========================== -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+      </script>
+
+
+      <!-- =========================
+         BOOTSTRAP JS
+    ========================== -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+
+
+      <!-- =========================
+         PAGE 3 JS
+    ========================== -->
+      <script>
+
+        $(function () {
+
+          /*
+           * Calendar switches
+           */
+          $('.switch').on('click', function () {
+
+            $(this).toggleClass('active');
+
+            var name = $(this).data('name');
+
+            console.log(
+              name + ': ' +
+              (
+                $(this).hasClass('active')
+                  ? 'ON'
+                  : 'OFF'
+              )
+            );
+
+          });
+
+
+          /*
+           * New calendar
+           */
+          $('#newCalendarBtn').on('click', function () {
+
+            alert('New calendar button clicked.');
+
+          });
+
+
+          /*
+           * Create group
+           */
+          $('#createGroupBtn').on('click', function () {
+
+            alert('Create group button clicked.');
+
+          });
+
+
+          /*
+           * Add vendor calendar
+           */
+          $('#addVendorBtn').on('click', function () {
+
+            $(this)
+              .text('added')
+              .addClass('added');
+
+          });
+
+        });
+
+      </script>
+      <script>
+        if (window.location.search.indexOf("embed=1") !== -1) {
+          document.body.classList.add("embed-page");
+        }
+      </script>
+  </body>
+
+  </html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotel - Chat, Consolidated</title>
+
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Shared Sidebar -->
+  <link rel="stylesheet" href="sidebar.css">
+
+  <!-- Page 4 CSS -->
+  <link rel="stylesheet" href="page4.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+         SHARED SIDEBAR
+    ====================================================== -->
+
+  <aside id="sidebar"></aside>
+
+
+  <!-- =====================================================
+         MAIN PAGE
+    ====================================================== -->
+
+  <main class="chat-page with-sidebar">
+
+    <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+    <header class="dashboard-header">
+
+      <div class="scope-text">
+        IN SCOPE · M2, M3, M4
+      </div>
+
+      <div class="header-title">
+        <h1>Chat, consolidated</h1>
+      </div>
+
+      <p class="header-description">
+        One system, rebuilt for handheld, opening in context from the work it belongs to.
+      </p>
+
+    </header>
+
+
+    <!-- =================================================
+             CHAT LAYOUT
+        ================================================== -->
+
+    <section class="chat-layout">
+
+
+      <!-- =================================================
+                 CHAT CARD
+            ================================================== -->
+
+      <section class="chat-card">
+
+
+        <!-- =================================================
+                     CHAT HEADER
+                ================================================== -->
+
+        <div class="chat-top">
+
+          <!-- Channel -->
+
+          <div class="chat-channel">
+
+            <button type="button" class="channel-btn">
+              <span class="online-dot"></span>
+
+              <span id="channelName" class="channel-name">
+                Engineering
+              </span>
+
+              <span class="member-count">
+                4
+              </span>
+
+              <span class="channel-arrow">
+                ▾
+              </span>
+            </button>
+
+
+            <!-- Channel Dropdown -->
+
+            <div class="channel-menu">
+
+              <button type="button" class="channel-option" data-channel="Engineering">
+                Engineering
+              </button>
+
+              <button type="button" class="channel-option" data-channel="Front Desk">
+                Front Desk
+              </button>
+
+              <button type="button" class="channel-option" data-channel="Housekeeping">
+                Housekeeping
+              </button>
+
+              <button type="button" class="channel-option" data-channel="Maintenance">
+                Maintenance
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+                         HEADER ACTIONS
+                    ================================================== -->
+
+          <div class="chat-actions">
+
+            <!-- Search -->
+
+            <input type="text" class="chat-search" placeholder="Search..." autocomplete="off">
+
+
+            <!-- Call -->
+
+            <button type="button" class="chat-action call-btn" title="Call">
+              ☎
+            </button>
+
+
+            <!-- Video -->
+
+            <button type="button" class="chat-action video-btn" title="Video">
+              ▷
+            </button>
+
+
+            <!-- More -->
+
+            <div class="more-wrapper">
+
+              <button type="button" class="chat-action more-btn" title="More">
+                ⋯
+              </button>
+
+
+              <div class="chat-more-menu">
+
+                <button type="button" class="chat-more-option">
+                  Mark as unread
+                </button>
+
+                <button type="button" class="chat-more-option">
+                  Archive conversation
+                </button>
+
+                <button type="button" class="chat-more-option">
+                  Clear search
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+                     REQUEST CARD
+                ================================================== -->
+
+        <div class="request-card">
+
+          <div class="request-left">
+
+            <div class="request-icon">
+              ▧
+            </div>
+
+            <div class="request-content">
+
+              <div class="request-title">
+                REQ-2287 · No hot water, 618
+              </div>
+
+              <div class="request-subtitle">
+                open · you took it · 1:58p
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="request-status">
+            open
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+                     CHAT MESSAGES
+                ================================================== -->
+
+        <div class="chat-messages">
+
+
+          <!-- =================================================
+                         INCOMING MESSAGE - ANA
+                    ================================================== -->
+
+          <div class="message-row">
+
+            <div class="avatar">
+              AR
+            </div>
+
+
+            <div class="message-content">
+
+              <div class="message-meta">
+
+                <span class="message-name">
+                  Ana
+                </span>
+
+                <span class="language">
+                  Spanish
+                </span>
+
+                <span class="message-time">
+                  2:31p
+                </span>
+
+              </div>
+
+
+              <div class="message-text">
+                The guest in 618 says there’s still no hot water.
+                They’re getting upset.
+              </div>
+
+
+              <div class="message-options">
+
+                <button type="button" class="message-option">
+                  original
+                </button>
+
+                <button type="button" class="message-option">
+                  read aloud
+                </button>
+
+                <button type="button" class="message-option reply-action">
+                  reply
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+                         INCOMING AUDIO MESSAGE - MARIA
+                    ================================================== -->
+
+          <div class="message-row">
+
+            <div class="avatar">
+              MD
+            </div>
+
+
+            <div class="message-content">
+
+              <div class="message-meta">
+
+                <span class="message-name">
+                  Maria
+                </span>
+
+                <span class="language">
+                  Voice
+                </span>
+
+                <span class="message-time">
+                  2:33p
+                </span>
+
+              </div>
+
+
+              <div class="audio-message">
+
+                <button type="button" class="play-button">
+                  ▶
+                </button>
+
+
+                <div class="waveform">
+
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                </div>
+
+
+                <span class="audio-time">
+                  0:11
+                </span>
+
+              </div>
+
+
+              <div class="message-text audio-transcript">
+                I’ve got a spare cartridge in the shop if you need it.
+              </div>
+
+
+              <div class="message-options">
+
+                <button type="button" class="message-option">
+                  original
+                </button>
+
+                <button type="button" class="message-option">
+                  read aloud
+                </button>
+
+                <button type="button" class="message-option reply-action">
+                  reply
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+                         MY MESSAGE
+                    ================================================== -->
+
+          <div class="my-message-wrapper">
+
+            <div class="my-message-meta">
+
+              <span class="message-name">
+                You
+              </span>
+
+              <span class="message-time">
+                2:34p
+              </span>
+
+            </div>
+
+
+            <div class="my-message">
+
+              <div class="message-text">
+                @Maria perfect, grabbing it now.
+              </div>
+
+              <div class="read-status">
+                read by 3
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+                     MESSAGE INPUT
+                ================================================== -->
+
+        <div class="message-input-row">
+
+          <!-- Add -->
+
+          <button type="button" class="add-button" title="Add">
+            +
+          </button>
+
+
+          <!-- Input -->
+
+          <input type="text" class="message-input" placeholder="Message Engineering" autocomplete="off">
+
+
+          <!-- Microphone -->
+
+          <button type="button" class="input-icon" title="Voice message">
+            ♫
+          </button>
+
+
+          <!-- Send -->
+
+          <button type="button" class="send-button" title="Send message">
+            →
+          </button>
+
+        </div>
+
+
+        <!-- =================================================
+                     INPUT FOOTER
+                ================================================== -->
+
+        <div class="input-footer">
+
+          <span>
+            you write English · Ana reads Spanish
+          </span>
+
+          <button type="button" class="request-link">
+            make a request
+          </button>
+
+        </div>
+
+
+      </section>
+
+
+      <!-- =================================================
+                 NOTES
+            ================================================== -->
+
+      <!-- <aside class="notes-section">
+
+        <div class="notes-label">
+          NOTES
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            One chat, reached from everywhere.
+          </strong>
+
+          The engagement’s whole purpose. A thread opens from a
+          request, an event, a room or a person — and it is the
+          same thread each time, not a new one.
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            The linked object is pinned in the thread.
+          </strong>
+
+          A conversation about a request should carry the request.
+          Both directions navigate.
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            Translation is per reader, at read time.
+          </strong>
+
+          The sender’s text is stored unchanged and never overwritten.
+          Each recipient resolves their own language.
+          <b>The original is always one tap away.</b>
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            Language comes from Foundations.
+          </strong>
+
+          Per-user preferences live there. If that has not shipped,
+          M2 cannot prove its translation criterion — flag it as a
+          dependency, do not build a second preference store.
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            Voice notes carry their transcription.
+          </strong>
+
+          Playback for the sender’s tone, text for the reader who
+          cannot listen in a corridor.
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            The header matches every communications surface.
+          </strong>
+
+          Same selector, same behaviour, in chat, push-to-talk,
+          voice and video. Learn it once.
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>
+            Make a request, without leaving.
+          </strong>
+
+          Most operational chat is a request nobody filed.
+          One tap should turn it into one.
+
+        </div>
+
+
+        <div class="bottom-note">
+
+          Two chat systems exist in the codebase today.
+          The modern schema survives; translation and tie-messages
+          are carried onto it and their legacy is removed in the
+          same pull request.
+
+        </div>
+
+      </aside> -->
+
+    </section>
+
+
+    <!-- =================================================
+             PAGE FOOTER
+        ================================================== -->
+
+    <footer class="page-footer">
+
+      <span>
+        HOTEL DASHBOARD
+      </span>
+
+      <span>
+        CHAT · CONSOLIDATED
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Shared Sidebar -->
+  <script src="sidebar.js"></script>
+
+  <!-- Page 4 JavaScript -->
+  <script src="page4.js"></script>
+
+</body>
+
+</html>

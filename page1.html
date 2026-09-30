@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hotel Day Dashboard</title>
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="page1.css" />
+
+</head>
+
+<body class="body-background">
+  <aside id="sidebar"></aside>
+
+  <main class="hotel-dashboard with-sidebar">
+
+    <!-- ================= HEADER ================= -->
+    <section class="dashboard-header">
+      <div class="header-title">
+        <p class="scope-text">IN SCOPE · M5 AND M6</p>
+
+        <h1>The hotel day</h1>
+
+        <p class="header-description">
+          The default view. Scope M5 rebuilds it; M6 brings PDEE work onto it.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <section class="dashboard-content">
+
+      <!-- ================= LEFT SIDE ================= -->
+      <div class="hotel-day-card">
+
+        <!-- Date Header -->
+        <div class="day-header">
+
+          <div class="date-information">
+            <h2 id="dateTitle">Saturday,<br />September 6</h2>
+            <p class="month-text" id="monthText">September 2025</p>
+            <p class="hotel-name" id="hotelName">Stonecrest</p>
+          </div>
+
+
+          <!-- View Buttons -->
+          <div class="view-controls">
+
+            <div class="view-buttons">
+
+              <button type="button" class="view-btn active" data-view="day">
+                Day
+              </button>
+
+              <button type="button" class="view-btn" data-view="week">
+                Week
+              </button>
+
+              <button type="button" class="view-btn" data-view="month">
+                Month
+              </button>
+
+            </div>
+
+            <button type="button" class="today-btn" id="todayBtn">
+              Today
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================= HOTEL STATS ================= -->
+        <div class="hotel-stats">
+
+          <div class="stat-item">
+            <strong id="occupiedStat">78%</strong>
+            <span>occupied<br />tonight</span>
+          </div>
+
+          <div class="stat-item">
+            <strong id="arrivalsStat">41</strong>
+            <span>arrivals</span>
+          </div>
+
+          <div class="stat-item">
+            <strong id="departuresStat">52</strong>
+            <span>departures</span>
+          </div>
+
+          <div class="stat-item">
+            <strong id="vipsStat">2</strong>
+            <span>VIPs</span>
+          </div>
+
+          <div class="stat-item danger-stat">
+            <strong id="outOfOrderStat">4</strong>
+            <span>out of order</span>
+          </div>
+
+          <div class="busy-description">
+            <p id="busyDescription">
+              <strong>Busy turn day.</strong>
+              Housekeeping is one short and the elevator vendor has car 2 down
+              until noon.
+            </p>
+          </div>
+        </div>
+
+
+        <!-- ================= BUSY DESCRIPTION ================= -->
+
+
+        <!-- ================= FILTERS ================= -->
+        <div class="filter-container">
+
+          <button type="button" class="filter-btn active" data-filter="everything">
+            everything <span id="everythingCount">23</span>
+          </button>
+
+          <button type="button" class="filter-btn" data-filter="mine">
+            mine <span id="mineCount">6</span>
+          </button>
+
+          <button type="button" class="filter-btn" data-filter="rooms">
+            Rooms <span id="roomsCount">9</span>
+          </button>
+
+          <button type="button" class="filter-btn" data-filter="maintenance">
+            Maintenance <span id="maintenanceCount">7</span>
+          </button>
+
+          <button type="button" class="filter-btn" data-filter="vendors">
+            vendors <span id="vendorsCount">3</span>
+          </button>
+
+        </div>
+
+
+        <!-- ================= TIMELINE ================= -->
+        <div class="timeline" id="timeline">
+
+          <!-- 9:00 -->
+          <div class="timeline-row" data-category="vendors" data-event-id="EVT-001">
+
+            <div class="time">
+              9:00a
+            </div>
+
+            <button type="button" class="event-card event-blue">
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  Otis — elevator 2 annual
+                </span>
+
+                <span class="event-meta">
+                  vendor · 9a-12p · car out of service
+                </span>
+
+              </div>
+
+              <span class="event-source">
+                vendor
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- 10:00 -->
+          <div class="timeline-row" data-category="rooms" data-event-id="EVT-002">
+
+            <div class="time">
+              10:00a
+            </div>
+
+            <button type="button" class="event-card event-dark">
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  Room PM — 301, 305, 318
+                </span>
+
+                <span class="event-meta">
+                  Maintenance · M1 · 2 rooms · PDEE
+                </span>
+
+              </div>
+
+              <span class="event-source">
+                2 of 3
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- 11:00 -->
+          <div class="timeline-row" data-category="rooms" data-event-id="EVT-003">
+
+            <div class="time">
+              11:00a
+            </div>
+
+            <button type="button" class="event-card event-dark">
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  Checkout — 52 rooms
+                </span>
+
+                <span class="event-meta">
+                  Rooms · all day
+                </span>
+
+              </div>
+
+              <span class="event-source">
+                22 sellable
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- 2:14 -->
+          <div class="timeline-row" data-category="mine" data-event-id="EVT-004">
+
+            <div class="time time-now">
+              2:14p
+            </div>
+
+            <button type="button" class="event-card event-orange" id="managerWalkBtn">
+
+              <div class="now-label">
+                NOW
+              </div>
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  Manager walk — lobby and public areas
+                </span>
+
+                <span class="event-meta">
+                  A&G · Teresa · 30 min
+                </span>
+
+              </div>
+
+              <div class="event-actions">
+                <span>chat</span>
+                <span>open it ›</span>
+              </div>
+
+            </button>
+
+          </div>
+
+
+          <!-- 3:00 -->
+          <div class="timeline-row" data-category="rooms" data-event-id="EVT-005">
+
+            <div class="time">
+              3:00p
+            </div>
+
+            <button type="button" class="event-card event-red">
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  VIP arrival — Marsh party, 412
+                </span>
+
+                <span class="event-meta">
+                  Rooms · room still awaiting inspection
+                </span>
+
+              </div>
+
+              <span class="event-source">
+                VIP
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- 6:00 -->
+          <div class="timeline-row" data-category="rooms" data-event-id="EVT-006">
+
+            <div class="time">
+              6:00p
+            </div>
+
+            <button type="button" class="event-card event-dark">
+
+              <div class="event-main">
+
+                <span class="event-title">
+                  Conference B setup — Kellerman group
+                </span>
+
+                <span class="event-meta">
+                  F&B · rounds of 10, 40 covers
+                </span>
+
+              </div>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================= LEGEND ================= -->
+        <div class="legend">
+
+          <span class="legend-item done">
+            done
+          </span>
+
+          <span class="legend-item now">
+            now
+          </span>
+
+          <span class="legend-item attention">
+            needs attention
+          </span>
+
+          <span class="legend-item vendor">
+            vendor
+          </span>
+
+          <span class="legend-item scheduled">
+            scheduled
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= RIGHT SIDE NOTES ================= -->
+      <!-- <aside class="notes-section">
+
+        <p class="notes-label">
+          NOTES
+        </p>
+
+        <div class="note">
+
+          <h3>
+            One calendar, every department.
+          </h3>
+
+          <p>
+            No property has this today. A housekeeper, an engineer and a
+            general manager open the same day and each finds their own work in
+            it — that is what the "mine" filter is for.
+          </p>
+
+        </div>
+
+
+        <div class="note">
+
+          <h3>
+            It opens by saying what kind of day it is.
+          </h3>
+
+          <p>
+            Occupancy, the turn, VIPs and rooms down, then one plain sentence.
+            A manager should know the shape of the day before reading a single
+            event.
+          </p>
+
+        </div>
+
+
+        <div class="note">
+
+          <h3>
+            Every event carries its department and its source.
+          </h3>
+
+          <p>
+            Manual, agenda, PDEE or vendor. Work sourced from another module
+            is read-only here and opens in the module that owns it.
+          </p>
+
+        </div>
+
+
+        <div class="note">
+
+          <h3>
+            Progress is a snapshot, never logic.
+          </h3>
+
+          <p>
+            "2 of 3" is read from the owning module.
+            <strong>
+              No execution logic and no scheduling calculation may live in
+              calendar code
+            </strong>
+            — a hard rule in the scope.
+          </p>
+
+        </div>
+
+
+        <div class="note">
+
+          <h3>
+            Filters state their own counts.
+          </h3>
+
+          <p>
+            A filter that hides its size makes the operator tap to find out.
+            Counts belong on the chip.
+          </p>
+
+        </div>
+
+
+        <div class="note">
+
+          <h3>
+            Status never reads by colour alone.
+          </h3>
+
+          <p>
+            Every row carries a label and a position as well as a colour. The
+            owner is colourblind; this is a platform rule, not a preference.
+          </p>
+
+        </div>
+
+      </aside> -->
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="dashboard-footer">
+      Ranged loading only — day and week queries, never a full year. A busy
+      month at a 200-room property must navigate without a freeze.
+    </footer>
+
+  </main>
+  <script src="sidebar.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!-- ================= DUMMY DATA + UI JS ================= -->
+  <script>
+
+    /*
+      ============================================================
+      DUMMY DATA
+      ============================================================
+
+      This object is the only place you need to change while
+      testing different backend responses.
+
+      Later your backend can return the same structure:
+
+      GET /api/calendar?view=day
+
+      Then you can do:
+
+      const data = await response.json();
+      renderDashboard(data);
+
+      The HTML/CSS structure does not need to change.
+    */
+
+    const dummyData = {
+
+      day: {
+        date: "Saturday",
+        dayNumber: "September 6",
+        month: "September 2025",
+        hotel: "Stonecrest",
+
+        stats: {
+          occupied: "78%",
+          arrivals: "41",
+          departures: "52",
+          vips: "2",
+          outOfOrder: "4"
+        },
+
+        description: {
+          title: "Busy turn day.",
+          text:
+            "Housekeeping is one short and the elevator vendor has car 2 down until noon."
+        },
+
+        filters: {
+          everything: 23,
+          mine: 6,
+          rooms: 9,
+          maintenance: 7,
+          vendors: 3
+        },
+
+        events: [
+          {
+            id: "EVT-001",
+            time: "9:00a",
+            category: "vendors",
+            title: "Otis — elevator 2 annual",
+            meta: "vendor · 9a-12p · car out of service",
+            source: "vendor",
+            style: "event-blue"
+          },
+          {
+            id: "EVT-002",
+            time: "10:00a",
+            category: "rooms",
+            title: "Room PM — 301, 305, 318",
+            meta: "Maintenance · M1 · 2 rooms · PDEE",
+            source: "2 of 3",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-003",
+            time: "11:00a",
+            category: "rooms",
+            title: "Checkout — 52 rooms",
+            meta: "Rooms · all day",
+            source: "22 sellable",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-004",
+            time: "2:14p",
+            category: "mine",
+            title: "Manager walk — lobby and public areas",
+            meta: "A&G · Teresa · 30 min",
+            source: "",
+            style: "event-orange",
+            now: true,
+            actions: ["chat", "open it ›"]
+          },
+          {
+            id: "EVT-005",
+            time: "3:00p",
+            category: "rooms",
+            title: "VIP arrival — Marsh party, 412",
+            meta: "Rooms · room still awaiting inspection",
+            source: "VIP",
+            style: "event-red"
+          },
+          {
+            id: "EVT-006",
+            time: "6:00p",
+            category: "rooms",
+            title: "Conference B setup — Kellerman group",
+            meta: "F&B · rounds of 10, 40 covers",
+            source: "",
+            style: "event-dark"
+          }
+        ]
+      },
+
+      week: {
+        date: "Week",
+        dayNumber: "September 1–7",
+        month: "September 2025",
+        hotel: "Stonecrest",
+
+        stats: {
+          occupied: "74%",
+          arrivals: "183",
+          departures: "197",
+          vips: "8",
+          outOfOrder: "5"
+        },
+
+        description: {
+          title: "Busy week.",
+          text:
+            "Turn days are concentrated around the weekend with several vendor and VIP items."
+        },
+
+        filters: {
+          everything: 64,
+          mine: 14,
+          rooms: 31,
+          maintenance: 18,
+          vendors: 9
+        },
+
+        events: [
+          {
+            id: "EVT-W001",
+            time: "Mon 9:00a",
+            category: "vendors",
+            title: "Elevator inspection",
+            meta: "vendor · 9a-11a · car 2",
+            source: "vendor",
+            style: "event-blue"
+          },
+          {
+            id: "EVT-W002",
+            time: "Tue 10:00a",
+            category: "rooms",
+            title: "Room PM — 301, 305, 318",
+            meta: "Maintenance · M1 · PDEE",
+            source: "3 rooms",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-W003",
+            time: "Wed 11:00a",
+            category: "rooms",
+            title: "Checkout — 48 rooms",
+            meta: "Rooms · all day",
+            source: "21 sellable",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-W004",
+            time: "Thu 2:00p",
+            category: "mine",
+            title: "Manager walk — public areas",
+            meta: "A&G · Teresa · 30 min",
+            source: "",
+            style: "event-orange",
+            now: true,
+            actions: ["chat", "open it ›"]
+          },
+          {
+            id: "EVT-W005",
+            time: "Fri 3:00p",
+            category: "rooms",
+            title: "VIP arrival — Marsh party",
+            meta: "Rooms · inspection required",
+            source: "VIP",
+            style: "event-red"
+          },
+          {
+            id: "EVT-W006",
+            time: "Sat 6:00p",
+            category: "rooms",
+            title: "Conference B setup",
+            meta: "F&B · 40 covers",
+            source: "",
+            style: "event-dark"
+          }
+        ]
+      },
+
+      month: {
+        date: "Month",
+        dayNumber: "September",
+        month: "September 2025",
+        hotel: "Stonecrest",
+
+        stats: {
+          occupied: "76%",
+          arrivals: "731",
+          departures: "718",
+          vips: "29",
+          outOfOrder: "6"
+        },
+
+        description: {
+          title: "Planning month.",
+          text:
+            "The month view is for planning and spotting busy periods before opening the working day."
+        },
+
+        filters: {
+          everything: 241,
+          mine: 48,
+          rooms: 113,
+          maintenance: 72,
+          vendors: 34
+        },
+
+        events: [
+          {
+            id: "EVT-M001",
+            time: "Sep 2",
+            category: "vendors",
+            title: "Elevator annual inspection",
+            meta: "vendor · scheduled",
+            source: "vendor",
+            style: "event-blue"
+          },
+          {
+            id: "EVT-M002",
+            time: "Sep 8",
+            category: "rooms",
+            title: "Room PM program",
+            meta: "Maintenance · PDEE",
+            source: "12 rooms",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-M003",
+            time: "Sep 12",
+            category: "rooms",
+            title: "High arrival day",
+            meta: "Rooms · 61 arrivals",
+            source: "61",
+            style: "event-dark"
+          },
+          {
+            id: "EVT-M004",
+            time: "Sep 18",
+            category: "mine",
+            title: "Manager monthly walk",
+            meta: "A&G · Teresa",
+            source: "",
+            style: "event-orange",
+            now: true,
+            actions: ["chat", "open it ›"]
+          },
+          {
+            id: "EVT-M005",
+            time: "Sep 23",
+            category: "rooms",
+            title: "VIP group arrival",
+            meta: "Rooms · inspection required",
+            source: "VIP",
+            style: "event-red"
+          },
+          {
+            id: "EVT-M006",
+            time: "Sep 28",
+            category: "rooms",
+            title: "Conference setup",
+            meta: "F&B · Kellerman group",
+            source: "",
+            style: "event-dark"
+          }
+        ]
+      }
+
+    };
+
+
+    /*
+      ============================================================
+      DOM REFERENCES
+      ============================================================
+    */
+
+    const dateTitle = document.getElementById("dateTitle");
+    const monthText = document.getElementById("monthText");
+    const hotelName = document.getElementById("hotelName");
+
+    const occupiedStat = document.getElementById("occupiedStat");
+    const arrivalsStat = document.getElementById("arrivalsStat");
+    const departuresStat = document.getElementById("departuresStat");
+    const vipsStat = document.getElementById("vipsStat");
+    const outOfOrderStat = document.getElementById("outOfOrderStat");
+
+    const busyDescription = document.getElementById("busyDescription");
+
+    const everythingCount = document.getElementById("everythingCount");
+    const mineCount = document.getElementById("mineCount");
+    const roomsCount = document.getElementById("roomsCount");
+    const maintenanceCount = document.getElementById("maintenanceCount");
+    const vendorsCount = document.getElementById("vendorsCount");
+
+    const timeline = document.getElementById("timeline");
+
+
+    /*
+      ============================================================
+      RENDER DASHBOARD
+      ============================================================
+    */
+
+    function renderDashboard(data) {
+
+      dateTitle.innerHTML =
+        `${data.date},<br />${data.dayNumber}`;
+
+      monthText.textContent = data.month;
+      hotelName.textContent = data.hotel;
+
+      occupiedStat.textContent = data.stats.occupied;
+      arrivalsStat.textContent = data.stats.arrivals;
+      departuresStat.textContent = data.stats.departures;
+      vipsStat.textContent = data.stats.vips;
+      outOfOrderStat.textContent = data.stats.outOfOrder;
+
+      busyDescription.innerHTML =
+        `<strong>${data.description.title}</strong>
+         ${data.description.text}`;
+
+      everythingCount.textContent = data.filters.everything;
+      mineCount.textContent = data.filters.mine;
+      roomsCount.textContent = data.filters.rooms;
+      maintenanceCount.textContent = data.filters.maintenance;
+      vendorsCount.textContent = data.filters.vendors;
+
+      renderEvents(data.events);
+    }
+
+
+    /*
+      ============================================================
+      RENDER EVENTS
+      ============================================================
+    */
+
+    function renderEvents(events) {
+
+      timeline.innerHTML = "";
+
+      events.forEach(event => {
+
+        const row = document.createElement("div");
+
+        row.className = "timeline-row";
+
+        row.dataset.category = event.category;
+        row.dataset.eventId = event.id;
+
+        const time = document.createElement("div");
+
+        time.className =
+          event.now
+            ? "time time-now"
+            : "time";
+
+        time.textContent = event.time;
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = `event-card ${event.style}`;
+
+        if (event.now) {
+
+          const nowLabel = document.createElement("div");
+
+          nowLabel.className = "now-label";
+          nowLabel.textContent = "NOW";
+
+          button.appendChild(nowLabel);
+        }
+
+
+        const main = document.createElement("div");
+
+        main.className = "event-main";
+
+        const title = document.createElement("span");
+
+        title.className = "event-title";
+        title.textContent = event.title;
+
+        const meta = document.createElement("span");
+
+        meta.className = "event-meta";
+        meta.textContent = event.meta;
+
+        main.appendChild(title);
+        main.appendChild(meta);
+
+        button.appendChild(main);
+
+
+        if (event.actions) {
+
+          const actions = document.createElement("div");
+
+          actions.className = "event-actions";
+
+          event.actions.forEach(action => {
+
+            const actionSpan = document.createElement("span");
+
+            actionSpan.textContent = action;
+
+            actions.appendChild(actionSpan);
+
+          });
+
+          button.appendChild(actions);
+
+        } else if (event.source) {
+
+          const source = document.createElement("span");
+
+          source.className = "event-source";
+          source.textContent = event.source;
+
+          button.appendChild(source);
+        }
+
+
+        /*
+          Event data is also stored on the button.
+
+          Later:
+          button.dataset.id can be replaced by a real
+          backend event ID.
+        */
+
+        button.dataset.id = event.id;
+
+        button.addEventListener("click", () => {
+
+          handleEventClick(event);
+
+        });
+
+        row.appendChild(time);
+        row.appendChild(button);
+
+        timeline.appendChild(row);
+
+      });
+
+    }
+
+
+    /*
+      ============================================================
+      EVENT CLICK
+      ============================================================
+    */
+
+    function handleEventClick(event) {
+
+      console.log("Selected event:", event);
+
+      alert(
+        `Event: ${event.title}\n\n` +
+        `ID: ${event.id}\n` +
+        `Category: ${event.category}\n` +
+        `Time: ${event.time}\n\n` +
+        `${event.meta}`
+      );
+
+      /*
+        Later backend example:
+
+        fetch(`/api/events/${event.id}`)
+          .then(res => res.json())
+          .then(data => {
+            // open event details
+          });
+      */
+    }
+
+
+    /*
+      ============================================================
+      VIEW BUTTONS
+      ============================================================
+    */
+
+    const viewButtons =
+      document.querySelectorAll(".view-btn");
+
+    viewButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        viewButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const selectedView =
+          button.dataset.view;
+
+        console.log(
+          "Selected view:",
+          selectedView
+        );
+
+        /*
+          For now:
+          use local dummy data.
+
+          Later:
+
+          fetch(`/api/calendar?view=${selectedView}`)
+            .then(res => res.json())
+            .then(data => {
+              renderDashboard(data);
+            });
+        */
+
+        if (dummyData[selectedView]) {
+
+          renderDashboard(
+            dummyData[selectedView]
+          );
+
+        }
+
+        /*
+          Reset filter after changing view.
+        */
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        document
+          .querySelector('[data-filter="everything"]')
+          .classList.add("active");
+
+      });
+
+    });
+
+
+    /*
+      ============================================================
+      TODAY BUTTON
+      ============================================================
+    */
+
+    document
+      .getElementById("todayBtn")
+      .addEventListener("click", () => {
+
+        console.log("Today clicked");
+
+        /*
+          Dummy behavior:
+          return to Day view.
+
+          Later:
+
+          fetch("/api/calendar/today")
+            .then(res => res.json())
+            .then(data => renderDashboard(data));
+        */
+
+        viewButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        document
+          .querySelector('[data-view="day"]')
+          .classList.add("active");
+
+        renderDashboard(dummyData.day);
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        document
+          .querySelector('[data-filter="everything"]')
+          .classList.add("active");
+
+      });
+
+
+    /*
+      ============================================================
+      FILTER BUTTONS
+      ============================================================
+    */
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter =
+          button.dataset.filter;
+
+        const timelineRows =
+          document.querySelectorAll(".timeline-row");
+
+        timelineRows.forEach(row => {
+
+          if (filter === "everything") {
+
+            row.style.display = "flex";
+
+          } else if (
+            row.dataset.category === filter
+          ) {
+
+            row.style.display = "flex";
+
+          } else {
+
+            row.style.display = "none";
+
+          }
+
+        });
+
+        console.log(
+          "Selected filter:",
+          filter
+        );
+
+      });
+
+    });
+
+
+    /*
+      ============================================================
+      MANAGER WALK
+      ============================================================
+    */
+
+    document
+      .getElementById("managerWalkBtn")
+      .addEventListener("click", () => {
+
+        const managerEvent =
+          dummyData.day.events.find(
+            event => event.id === "EVT-004"
+          );
+
+        if (managerEvent) {
+          handleEventClick(managerEvent);
+        }
+
+      });
+
+
+    /*
+      ============================================================
+      INITIAL LOAD
+      ============================================================
+    */
+
+    renderDashboard(dummyData.day);
+
+  </script>
+  <script>
+    if (window.location.search.indexOf("embed=1") !== -1) {
+      document.body.classList.add("embed-page");
+    }
+  </script>
+</body>
+
+</html>

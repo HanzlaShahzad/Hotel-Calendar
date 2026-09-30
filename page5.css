@@ -1,0 +1,908 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #0b0d0f;
+  color: #d9dde2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.pressure-page {
+  width: calc(100% - 205px);
+  min-height: 100vh;
+  margin-left: 205px;
+  padding: 32px 32px 48px;
+  background: #0b0d0f;
+}
+
+/* =========================================
+   CALENDER PAGE NAVIGATION
+========================================= */
+
+.calendar-page-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 0 32px 25px;
+
+  gap: 8px;
+}
+
+.calendar-page-nav a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+
+  padding: 10px 14px;
+
+  background: #101216;
+  border: 1px solid #24272d;
+  border-radius: 7px;
+
+  color: #8d949f;
+
+  text-decoration: none !important;
+
+  transition: all 0.15s ease;
+}
+
+.calendar-page-nav a:hover {
+  background: #191c21;
+  color: #e9edf2;
+}
+
+.calendar-page-nav a.active {
+  background: #20242a;
+  color: #f1f3f5;
+
+  border-color: #30353d;
+}
+
+.calendar-page-nav a span:first-child {
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  color: #65b99e;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.calendar-page-nav a span:last-child {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FULL WIDTH CALENDAR CONTENT
+========================================= */
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: none;
+}
+
+.calendar-main {
+  width: 100%;
+  max-width: none;
+
+  padding: 0 32px 40px;
+}
+
+
+/* =========================================
+   REMOVE OLD WIDTH LIMITS
+========================================= */
+
+.hotel-dashboard>.container,
+.calendar-main>.container {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .calendar-page-nav {
+    padding: 0 15px 20px;
+    gap: 6px;
+  }
+
+  .calendar-page-nav a {
+    min-height: 42px;
+  }
+
+  .calendar-main {
+    padding: 0 15px 30px;
+  }
+
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pressure-header {
+  margin-bottom: 20px;
+}
+
+.header-kicker {
+  margin-bottom: 5px;
+  color: #505965;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+}
+
+.pressure-header h1 {
+  margin: 0 0 5px;
+  color: #f0f1f3;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.pressure-header p {
+  margin: 0;
+  color: #707987;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.pressure-layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+
+/* =========================================================
+   CALENDAR CARD
+   ========================================================= */
+
+.calendar-card {
+  width: 100%;
+  min-width: 0;
+  padding: 18px;
+  border-radius: 12px;
+  background: #171a1f;
+  border: 1px solid #1c2026;
+}
+
+
+/* =========================================================
+   CALENDAR TOP
+   ========================================================= */
+
+.calendar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.calendar-top h2 {
+  margin: 0;
+  color: #f1f2f3;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.calendar-subtitle {
+  margin-top: 3px;
+  color: #606975;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   VIEW BUTTONS
+   ========================================================= */
+
+.view-buttons {
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #30353d;
+  border-radius: 7px;
+}
+
+.view-btn {
+  height: 26px;
+  padding: 0 11px;
+  border: 0;
+  border-right: 1px solid #30353d;
+  background: transparent;
+  color: #8a929d;
+  font-size: 10px;
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+.view-btn:last-child {
+  border-right: 0;
+}
+
+.view-btn:hover {
+  background: #22262c;
+  color: #dfe2e5;
+}
+
+.view-btn.active {
+  background: #d6a968;
+  color: #151719;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+   ========================================================= */
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.filter-btn {
+  padding: 5px 10px;
+  border: 1px solid #30353d;
+  border-radius: 6px;
+  background: transparent;
+  color: #7c8591;
+  font-size: 9px;
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+.filter-btn:hover {
+  background: #22262c;
+  color: #dfe2e5;
+}
+
+.filter-btn.active {
+  border-color: #9a692b;
+  background: #2a2118;
+  color: #d6a968;
+}
+
+
+/* =========================================================
+   WEEKDAYS
+   ========================================================= */
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.weekdays div {
+  text-align: center;
+  color: #555e69;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CALENDAR GRID
+   ========================================================= */
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+
+/* =========================================================
+   EMPTY CELLS
+   ========================================================= */
+
+.calendar-empty {
+  min-height: 56px;
+}
+
+
+/* =========================================================
+   DAY CELLS
+   ========================================================= */
+
+.day-cell {
+  position: relative;
+  min-width: 0;
+  min-height: 56px;
+  padding: 8px 7px;
+  border: 0;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform .12s ease,
+    filter .12s ease,
+    box-shadow .12s ease;
+}
+
+.day-cell:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.day-cell.selected {
+  box-shadow:
+    inset 0 0 0 2px #d6a968;
+}
+
+
+/* =========================================================
+   DAY NUMBER
+   ========================================================= */
+
+.day-number {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DAY LEVEL
+   ========================================================= */
+
+.day-level {
+  display: block;
+  font-size: 8px;
+  opacity: .72;
+}
+
+
+/* =========================================================
+   PRESSURE COLORS
+   ========================================================= */
+
+.day-cell.easy {
+  background: #174436;
+  color: #8eb9aa;
+}
+
+.day-cell.steady {
+  background: #294b3c;
+  color: #9db9aa;
+}
+
+.day-cell.busy {
+  background: #665126;
+  color: #d6bd8c;
+}
+
+.day-cell.heavy {
+  background: #713c2b;
+  color: #d5a798;
+}
+
+.day-cell.too-much {
+  background: rgb(122 38 34);
+  color: #e2b4a5;
+}
+
+
+/* =========================================================
+   FILTERED CELLS
+   ========================================================= */
+
+.day-cell.filtered-out {
+  opacity: .18;
+  filter: grayscale(.4);
+}
+
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.legend-label {
+  color: #68717c;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.legend-colors {
+  display: flex;
+  flex: 1;
+  height: 7px;
+}
+
+.legend-box {
+  flex: 1;
+}
+
+.easy-1 {
+  background: #174436;
+}
+
+.easy-2 {
+  background: #294b3c;
+}
+
+.easy-3 {
+  background: #445034;
+}
+
+.easy-4 {
+  background: #665126;
+}
+
+.easy-5 {
+  background: #713c2b;
+}
+
+.easy-6 {
+  background: #88452d;
+}
+
+
+/* =========================================================
+   DAY DETAIL
+   ========================================================= */
+
+.day-detail {
+  margin-top: 17px;
+  padding: 13px;
+  border: 2px solid #d34e45;
+  border-radius: 10px;
+  background: #2b1110;
+}
+
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.detail-header h3 {
+  display: inline-block;
+  margin: 0;
+  color: #dc9992;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detail-capacity {
+  float: right;
+  margin-top: 2px;
+  color: #df6860;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.detail-metrics {
+  margin-bottom: 12px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 50px;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 7px;
+}
+
+.metric-row>span {
+  color: #9b706c;
+  font-size: 8px;
+}
+
+.metric-row strong {
+  color: #c77d75;
+  font-size: 8px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.metric-bar {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #461d1b;
+}
+
+.metric-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: #c84f49;
+}
+
+.metric-row:nth-child(3) .metric-bar span {
+  background: #bc8648;
+}
+
+
+/* =========================================================
+   DETAIL NOTE
+   ========================================================= */
+
+.detail-note {
+  padding: 11px;
+  border-radius: 7px;
+  background: #45201d;
+  color: #c8928c;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.detail-actions {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .8fr;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.action-btn {
+  min-height: 39px;
+  padding: 7px 9px;
+  border: 1px solid #59302c;
+  border-radius: 7px;
+  background: transparent;
+  color: #a77a75;
+  font-size: 9px;
+  text-align: left;
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+.action-btn:hover {
+  background: #451c1a;
+  color: #dfaaa4;
+}
+
+.primary-action {
+  color: #dc9992;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   LIST VIEW
+   ========================================================= */
+
+.list-view {
+  display: none;
+  margin-top: 10px;
+}
+
+.list-day {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: 1px solid #292e35;
+  border-radius: 7px;
+  background: #1b1f24;
+  color: #d9dde2;
+  text-align: left;
+  cursor: pointer;
+}
+
+.list-day:hover {
+  background: #22262c;
+}
+
+.list-date {
+  width: 35px;
+  color: #c9ced4;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.list-info {
+  flex: 1;
+}
+
+.list-info strong {
+  display: block;
+  font-size: 10px;
+}
+
+.list-info small {
+  display: block;
+  margin-top: 2px;
+  color: #68717c;
+  font-size: 8px;
+}
+
+.list-level {
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.notes-column {
+  min-width: 0;
+  max-width: 500px;
+  padding-top: 5px;
+}
+
+.notes-kicker {
+  margin-bottom: 9px;
+  color: #69727e;
+  font-size: 9px;
+  letter-spacing: 1.1px;
+}
+
+.note-item {
+  margin-bottom: 17px;
+}
+
+.note-item p {
+  margin: 0;
+  color: #a7adb5;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.note-item strong {
+  color: #e2e4e7;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.pressure-footer {
+  margin-top: 16px;
+  padding-top: 11px;
+  border-top: 1px solid #292e34;
+  color: #4e5965;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .pressure-layout {
+    grid-template-columns: 350px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1000
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .pressure-layout {
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .pressure-page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SIDEBAR 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .pressure-page {
+    width: calc(100% - 175px);
+    margin-left: 175px;
+  }
+
+  .pressure-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-column {
+    max-width: none;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .pressure-page {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 20px 14px 35px;
+  }
+
+  .pressure-layout {
+    display: block;
+  }
+
+  .calendar-card {
+    margin-bottom: 25px;
+    padding: 14px;
+  }
+
+  .calendar-top {
+    align-items: flex-start;
+  }
+
+  .view-buttons {
+    margin-left: auto;
+  }
+
+  .view-btn {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .day-cell {
+    min-height: 50px;
+    padding: 7px 5px;
+  }
+
+  .day-number {
+    font-size: 10px;
+  }
+
+  .day-level {
+    font-size: 7px;
+  }
+
+  .metric-row {
+    grid-template-columns: 75px minmax(0, 1fr) 45px;
+  }
+
+  .detail-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .action-btn {
+    min-height: 38px;
+  }
+
+  .notes-column {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .pressure-page {
+    padding: 15px 10px 30px;
+  }
+
+  .calendar-card {
+    padding: 11px;
+    border-radius: 9px;
+  }
+
+  .calendar-top {
+    display: block;
+  }
+
+  .view-buttons {
+    margin-top: 10px;
+    width: max-content;
+  }
+
+  .filter-buttons {
+    gap: 4px;
+  }
+
+  .filter-btn {
+    padding: 5px 7px;
+    font-size: 8px;
+  }
+
+  .calendar-grid,
+  .weekdays {
+    gap: 3px;
+  }
+
+  .day-cell {
+    min-height: 47px;
+    border-radius: 6px;
+    padding: 6px 4px;
+  }
+
+  .day-number {
+    font-size: 9px;
+    margin-bottom: 3px;
+  }
+
+  .day-level {
+    font-size: 6px;
+  }
+
+  .calendar-empty {
+    min-height: 47px;
+  }
+
+  .metric-row {
+    grid-template-columns: 68px minmax(0, 1fr) 42px;
+  }
+
+}
+
+body.embed-page #sidebar {
+  display: none !important;
+}
+
+body.embed-page .with-sidebar {
+  width: 100% !important;
+  margin-left: 0 !important;
+}

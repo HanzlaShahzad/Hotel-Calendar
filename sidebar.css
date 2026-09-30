@@ -1,0 +1,333 @@
+/* =========================================
+   SIDEBAR
+========================================= */
+
+#sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 205px;
+  height: 100vh;
+
+  z-index: 9999;
+
+  background: #101216;
+
+  border-right: 1px solid #24272d;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+/* =========================================
+   INNER
+========================================= */
+
+.sidebar-inner {
+  width: 100%;
+
+  padding: 28px 16px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.sidebar-title {
+  width: 100%;
+
+  margin: 0 10px 22px;
+
+  color: #8b919c;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAV
+========================================= */
+
+.sidebar-nav {
+  width: 100%;
+}
+
+
+/* =========================================
+   MAIN SIDEBAR BUTTON
+========================================= */
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+
+  margin-bottom: 5px;
+  padding: 8px 10px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #8d949f;
+
+  text-decoration: none !important;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background-color .15s ease,
+    color .15s ease;
+}
+
+
+.sidebar-link:hover {
+  background: #191c21;
+
+  color: #e9edf2;
+}
+
+
+.sidebar-link.active {
+  background: #20242a;
+
+  color: #f1f3f5;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.sidebar-number {
+  display: inline-block;
+
+  flex: 0 0 30px;
+
+  width: 30px;
+
+  color: #5f6671;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+.sidebar-link.active .sidebar-number {
+  color: #65b99e;
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.sidebar-name {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  color: inherit;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   CALENDAR ARROW
+========================================= */
+
+.calendar-arrow {
+  flex: 0 0 auto;
+
+  margin-left: 8px;
+
+  color: #69717e;
+
+  font-size: 11px;
+
+  transition:
+    transform .2s ease,
+    color .15s ease;
+}
+
+
+.calendar-arrow.open {
+  transform: rotate(180deg);
+
+  color: #65b99e;
+}
+
+
+/* =========================================
+   CALENDAR SUB MENU
+========================================= */
+
+.calendar-submenu {
+  display: none;
+
+  width: 100%;
+
+  margin: 2px 0 8px;
+
+  padding-left: 18px;
+
+  border-left: 1px solid #292d34;
+}
+
+
+.calendar-submenu.show {
+  display: block;
+}
+
+
+/* =========================================
+   CALENDAR SUB BUTTON
+========================================= */
+
+.calendar-sub-link {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 38px;
+
+  margin-bottom: 3px;
+
+  padding: 7px 8px;
+
+  border-radius: 6px;
+
+  color: #737b87;
+
+  text-decoration: none !important;
+
+  font-size: 11px;
+
+  transition:
+    background-color .15s ease,
+    color .15s ease;
+}
+
+
+.calendar-sub-link:hover {
+  background: #191c21;
+
+  color: #e9edf2;
+}
+
+
+.calendar-sub-link.active {
+  background: #20242a;
+
+  color: #f1f3f5;
+}
+
+
+/* =========================================
+   SUB NUMBER
+========================================= */
+
+.calendar-sub-number {
+  flex: 0 0 28px;
+
+  width: 28px;
+
+  color: #555d68;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.calendar-sub-link.active .calendar-sub-number {
+  color: #65b99e;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.with-sidebar {
+  width: calc(100% - 205px);
+
+  min-height: 100vh;
+  min-width: 0;
+
+  margin-left: 205px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  #sidebar {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 0;
+
+    border-right: 0;
+    border-bottom: 1px solid #24272d;
+
+    overflow: visible;
+  }
+
+
+  .sidebar-inner {
+    width: 100%;
+
+    padding: 12px;
+  }
+
+
+  .sidebar-nav {
+    width: 100%;
+  }
+
+
+  .sidebar-link {
+    width: 100%;
+  }
+
+
+  .calendar-submenu {
+    padding-left: 14px;
+  }
+
+
+  .with-sidebar {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+}

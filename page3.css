@@ -1,0 +1,1058 @@
+/* =========================================================
+   PAGE 3 - GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: #090a0c;
+  color: #e9edf2;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CALENDER PAGE NAVIGATION
+========================================= */
+
+.calendar-page-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 0 32px 25px;
+
+  gap: 8px;
+}
+
+.calendar-page-nav a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+
+  padding: 10px 14px;
+
+  background: #101216;
+  border: 1px solid #24272d;
+  border-radius: 7px;
+
+  color: #8d949f;
+
+  text-decoration: none !important;
+
+  transition: all 0.15s ease;
+}
+
+.calendar-page-nav a:hover {
+  background: #191c21;
+  color: #e9edf2;
+}
+
+.calendar-page-nav a.active {
+  background: #20242a;
+  color: #f1f3f5;
+
+  border-color: #30353d;
+}
+
+.calendar-page-nav a span:first-child {
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  color: #65b99e;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.calendar-page-nav a span:last-child {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   FULL WIDTH CALENDAR CONTENT
+========================================= */
+
+.hotel-dashboard {
+  width: 100%;
+  max-width: none;
+
+  min-width: 0;
+}
+
+.calendar-main {
+  width: 100%;
+  max-width: none;
+
+  min-width: 0;
+
+  padding: 0 32px 40px;
+}
+
+
+/* =========================================
+   REMOVE OLD WIDTH LIMITS
+========================================= */
+
+.hotel-dashboard>.container,
+.calendar-main>.container {
+  width: 100%;
+  max-width: none;
+
+  min-width: 0;
+}
+
+
+/* =========================================
+   MOBILE CALENDAR NAV
+========================================= */
+
+@media (max-width: 767px) {
+
+  .calendar-page-nav {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 15px 20px;
+
+    gap: 6px;
+  }
+
+  .calendar-page-nav a {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .calendar-main {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 15px 30px;
+  }
+
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.page-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 0 28px 28px;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.dashboard-wrap {
+  width: 100%;
+
+  /*
+     IMPORTANT:
+     Do not limit Page 3 to 1050px.
+     The dashboard must use all available
+     width after the sidebar.
+  */
+  max-width: none;
+
+  min-width: 0;
+
+  padding-top: 31px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-bottom: 17px;
+
+  border: 0;
+
+  overflow-wrap: break-word;
+}
+
+.scope-label,
+.notes-label,
+.section-label {
+  color: #69717e;
+
+  font-size: 10px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  margin: 2px 0 4px;
+
+  color: #edf0f4;
+
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+
+  overflow-wrap: break-word;
+}
+
+.header-description {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+
+  color: #69717e;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   BOOTSTRAP ROW FIX
+========================================================= */
+
+.main-row {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.left-column,
+.right-column {
+  min-width: 0;
+  max-width: 100%;
+
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+/* =========================================================
+   CALENDAR CARD
+========================================================= */
+
+.calendar-card {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  background: #17191e;
+
+  border: 1px solid #1e2127;
+  border-radius: 13px;
+
+  padding: 16px 17px 14px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, .15);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.card-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+.card-heading h2 {
+  min-width: 0;
+
+  margin: 0;
+
+  color: #f1f3f5;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  overflow-wrap: break-word;
+}
+
+.new-calendar-btn,
+.section-action {
+  flex: 0 0 auto;
+
+  border: 0;
+  background: transparent;
+
+  color: #73a9d5;
+
+  font-size: 11px;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.new-calendar-btn:hover,
+.section-action:hover {
+  color: #9bc5e6;
+}
+
+
+/* =========================================================
+   CALENDAR SECTIONS
+========================================================= */
+
+.calendar-section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-bottom: 18px;
+}
+
+.calendar-section:last-child {
+  margin-bottom: 0;
+}
+
+.calendar-section>.section-label {
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  gap: 10px;
+
+  margin-bottom: 9px;
+}
+
+.section-heading .section-label {
+  min-width: 0;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   CALENDAR ITEM
+========================================================= */
+
+.calendar-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  min-height: 39px;
+
+  gap: 10px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+}
+
+.calendar-item+.calendar-item {
+  margin-top: 2px;
+}
+
+.calendar-item:hover {
+  background: rgba(255, 255, 255, .025);
+}
+
+
+/* =========================================================
+   ITEM LEFT
+========================================================= */
+
+.item-left {
+  display: flex;
+
+  align-items: center;
+
+  flex: 1 1 auto;
+
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+
+  gap: 11px;
+}
+
+.item-left>div {
+  flex: 1 1 auto;
+
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   ITEM RIGHT
+========================================================= */
+
+.item-right {
+  display: flex;
+
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  gap: 9px;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   CALENDAR DOT
+========================================================= */
+
+.calendar-dot {
+  display: inline-block;
+
+  flex: 0 0 auto;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 2px;
+}
+
+.dot-orange {
+  background: #d99b57;
+}
+
+.dot-purple {
+  background: #9b6ea8;
+}
+
+.dot-blue {
+  background: #72a4d4;
+}
+
+.dot-green {
+  background: #67ad9a;
+}
+
+.dot-pink {
+  background: #c08caf;
+}
+
+.dot-gray {
+  background: #626873;
+}
+
+
+/* =========================================================
+   ITEM TEXT
+========================================================= */
+
+.item-name {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  color: #e9edf1;
+
+  font-size: 12px;
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-subtitle {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 2px;
+
+  color: #6d747f;
+
+  font-size: 9px;
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tiny-text {
+  color: #4f8f7b;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DISABLED ITEMS
+========================================================= */
+
+.disabled-row .item-name {
+  color: #737983;
+}
+
+.disabled-row .item-subtitle {
+  color: #5d626b;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.switch {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 30px;
+  height: 19px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: #353941;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.switch span {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #656b74;
+
+  transition:
+    left .15s ease,
+    background .15s ease;
+}
+
+.switch.active {
+  background: #5eaf98;
+}
+
+.switch.active span {
+  left: 14px;
+
+  background: #17201e;
+}
+
+
+/* =========================================================
+   SHARED SECTION
+========================================================= */
+
+.shared-section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   SHARED ITEM
+========================================================= */
+
+.shared-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  min-height: 51px;
+
+  gap: 10px;
+
+  margin-top: 7px;
+
+  padding: 8px 9px;
+
+  border: 1px solid #55401e;
+  border-radius: 8px;
+
+  background: #1b1b19;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-btn {
+  flex: 0 0 auto;
+
+  padding: 7px 10px;
+
+  border: 1px solid #74531e;
+  border-radius: 7px;
+
+  background: #211b11;
+
+  color: #d99b48;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background: #2a2114;
+}
+
+.add-btn.added {
+  color: #66b99d;
+
+  border-color: #315f50;
+
+  background: #16221f;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+/*
+   Notes HTML is commented out on Page 3,
+   but CSS is intentionally kept here.
+*/
+
+.notes-section {
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+
+  padding: 8px 0 0 13px;
+
+  overflow-wrap: break-word;
+}
+
+.notes-label {
+  margin-bottom: 10px;
+}
+
+.notes-section p {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 0 17px;
+
+  color: #a8adb5;
+
+  font-size: 11px;
+  line-height: 1.75;
+
+  overflow-wrap: break-word;
+}
+
+.notes-section strong {
+  color: #f0f2f4;
+
+  font-weight: 600;
+}
+
+.notes-section .out-of-scope {
+  color: #c18a43;
+}
+
+.notes-section .out-of-scope strong {
+  color: #f0f2f4;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.page-footer {
+  /*
+     FULL WIDTH
+     Previously this was 58%, which caused the
+     footer to stop halfway across the page.
+  */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 16px;
+
+  padding-top: 11px;
+
+  border-top: 1px solid #292c31;
+
+  color: #555d68;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .dashboard-wrap {
+    width: 100%;
+    max-width: none;
+  }
+
+  .page-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-row {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .left-column,
+  .right-column {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .calendar-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .notes-section {
+    padding-left: 5px;
+  }
+
+  .page-footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /*
+     Important:
+     Bootstrap .row uses negative margins.
+     Remove them on mobile so the row cannot
+     extend outside the viewport.
+  */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+
+    padding: 0 14px 24px;
+
+    overflow-x: hidden;
+  }
+
+
+  .dashboard-wrap {
+    width: 100%;
+    max-width: 100%;
+
+    padding-top: 23px;
+  }
+
+
+  .page-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .header-description {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .main-row {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .calendar-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .right-column {
+    margin-top: 25px;
+  }
+
+
+  .notes-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+  }
+
+
+  .page-footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .shared-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .card-heading {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 12px;
+  }
+
+
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .dashboard-wrap {
+    width: 100%;
+    max-width: 100%;
+
+    padding-top: 18px;
+  }
+
+
+  .page-header h1 {
+    font-size: 18px;
+  }
+
+
+  .header-description {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 11px;
+  }
+
+
+  .calendar-card {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 14px 11px 12px;
+
+    border-radius: 11px;
+  }
+
+
+  .calendar-item {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+  .item-left {
+    gap: 8px;
+  }
+
+
+  .item-name {
+    font-size: 11px;
+  }
+
+
+  .item-subtitle {
+    font-size: 8px;
+  }
+
+
+  .notes-section p {
+    font-size: 10.5px;
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+  }
+
+
+  .page-footer {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 9px;
+  }
+
+}
+body.embed-page #sidebar {
+    display: none !important;
+}
+
+body.embed-page .with-sidebar {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
